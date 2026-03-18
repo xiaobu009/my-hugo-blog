@@ -1,1 +1,63 @@
-/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss *//* 彻底去掉 TOC 的数字序号 */
+.toc-nav {
+    ol {
+        counter-reset: none !important;           // 可选，禁用计数器重置
+
+        li a:first-of-type::before {
+            content: none !important;             // 最关键：移除 ::before 的内容
+            counter-increment: none !important;   // 停止计数
+        }
+    }
+}
+
+/* 可选：如果想保持一点缩进但不要序号 */
+.toc-nav li {
+    margin-left: 1.2em;          /* 或你喜欢的缩进值 */
+    padding-left: 0;
+}
+
+li a:hover {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+/* 缩小右侧 TOC 的行间距，让整体更紧凑 */
+.toc-nav {
+    // 全局缩小字体（可选，如果觉得文字太大也可一起调小）
+    // font-size: 0.95rem;  // 或 0.92rem，根据需要
+
+    // 核心：缩小每行的行高（默认可能 1.5+，调到 1.2~1.4 很紧凑）
+    line-height: 1.35;          // 推荐从 1.35 开始试，1.2 会更密集，1.4 稍松
+
+    // 缩小列表项的垂直外边距（原代码有 margin: 15px 0）
+    li {
+        margin: 8px 0 8px 20px;     // 上下 margin 从 15px 缩小到 8px（或更小如 6px）
+        padding: 3px 5px;           // 内边距也小一点，避免太挤
+    }
+
+    // 嵌套的子列表（二级、三级）也同步缩小
+    li > ul,
+    li > ol {
+        margin-top: 4px;            // 子列表顶部间距缩小
+        margin-bottom: 4px;
+        padding-left: 12px;         // 缩进也稍小一点
+    }
+
+    // 链接本身的行高覆盖，确保生效
+    a {
+        line-height: 1.35;          // 与上面保持一致
+        padding: 4px 0;             // 链接内上下 padding 小一点
+    }
+
+    // 如果有 active-class 高亮项，也保持紧凑
+    li.active-class > a {
+        padding: 4px 8px 4px 12px;  // 调整左侧 padding 以匹配边框
+    }
+}
+
+/* 可选：如果想更极端紧凑（适合很多标题的文章） */
+.toc-nav {
+    line-height: 1.25;
+    li {
+        margin: 5px 0 5px 18px;
+    }
+}

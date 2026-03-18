@@ -1,4 +1,4 @@
-baseURL                = "https://demo.stack.cai.im/"
+baseURL                = "https://smallstep.one/"
 languageCode           = "zh"
 title                  = "小布分享站"
 # Theme i18n support
@@ -12,7 +12,7 @@ hasCJKLanguage         = false
 #    path = "github.com/CaiJimmy/hugo-theme-stack/v3"
 
 [pagination]
-    pagerSize = 5
+    pagerSize = 10
 
 [permalinks]
     post = "/p/:slug/"
