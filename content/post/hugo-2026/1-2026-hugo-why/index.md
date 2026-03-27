@@ -46,6 +46,6 @@ tags:
 
 希望本篇文章能帮你下定决心使用 Hugo 建站！接下来，我们将正式开始搭建属于你的个人博客。
 
-👉 **本系列下一篇预告：** [Hugo v0.158 本地安装 + 创建第一个站点](./hugo-v0158-local-install.md)
+👉 **本系列下一篇预告：** [Hugo v0.158 本地安装 + 创建第一个站点](/hugo-v0158-local-install)
 
-**查看全系列教程：** 返回 [smallstep.top 系列导航提示](/categories/hugo建站/) 查看所有文章！
+**查看全系列教程：** 返回 [Hugo建站](/categories/hugo建站/) 查看所有文章！
