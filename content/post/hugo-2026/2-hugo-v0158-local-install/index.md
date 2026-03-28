@@ -1,6 +1,6 @@
 ---
 title: "2-Hugo v0.158 本地安装 + 创建第一个站点"
-date: 2026-03-26T09:37:23+08:00
+date: 2026-03-27T09:37:23+08:00
 draft: false
 description: ""
 url: "hugo-v0158-local-install"

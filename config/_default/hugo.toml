@@ -1,4 +1,4 @@
-baseURL                = "https://smallstep.one/"
+baseURL                = "https://smallstep.top/"
 languageCode           = "zh"
 title                  = "小布分享站"
 # Theme i18n support
@@ -20,3 +20,5 @@ hasCJKLanguage         = false
 
 [services.disqus]
     shortname = "hugo-theme-stack"
+
+enableRobotsTXT = true
