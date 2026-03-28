@@ -12,16 +12,21 @@ favicon        = "img/avatar.png"
 
 [article]
     [article.license]
-        enabled = false
+        enabled = true
         default = "Licensed under CC BY-NC-SA 4.0"
 
 [widgets]
     homepage = [
         { type = "search" },
+        { type = "archives", params = { limit = 2 } },
         { type = "categories", params = { limit = 10 } },
         { type = "tag-cloud", params = { limit = 20 } },
     ]
-    page     = [{ type = "toc" }]
+    page     = [
+        { type = "toc" },
+        { type = "categories", params = { limit = 10 } },
+        { type = "tag-cloud", params = { limit = 20 } },        
+    ]
 
 [comments]
     # See complete configuration in config/_default/params.toml

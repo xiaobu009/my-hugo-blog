@@ -92,6 +92,6 @@ http://localhost:1313/
 
 我们已经成功迈出了本地环境搭建的重要一步，接下来的重点就是“装修”我们的网站了。
 
-👉 **本系列下一篇预告：** [2026 最推荐 3 个 Hugo 主题实操：PaperMod / Stack / Hugo Blox](/2026-best-hugo-themes)
+👉 **本系列下一篇预告：** [2026 最推荐 2 个 Hugo 主题实操：PaperMod / Stack / Hugo Blox](/2026-best-hugo-themes)
 
 **查看全系列教程：** 返回 [Hugo建站](/categories/hugo建站/) 查看所有文章！
