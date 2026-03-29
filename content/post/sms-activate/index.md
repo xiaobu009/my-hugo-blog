@@ -3,9 +3,10 @@ title: "SMS-Activate 接码平台的使用"
 date: 2023-09-18
 draft: false
 description: "是一款来自俄罗斯的全球手机接码平台，可用于接收验证短信"
+keywords: ["SMS-Activate 接码平台", "俄罗斯虚拟号码", "低成本海外账号短信验证", "ChatGPT OpenAI 注册验证", "高接通率验证短信接收"]
 url: "sms-activate"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 网络
 ---

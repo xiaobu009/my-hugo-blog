@@ -41,3 +41,24 @@ favicon        = "img/avatar.png"
     [cookies.categories]
         analytics  = true
         functional = true
+
+# config/_default/params.toml
+description = "曾经的码农,曾经的网管,曾经的网络销售,今天的专职网络干饭人,欢迎您的到来，让我们一起探索网络干饭的方法..."
+keywords= [
+    "Hugo 建站教程", 
+    "静态博客部署", 
+    "VPS 节点搭建", 
+    "科学上网指南", 
+    "域名注册与解析", 
+    "Cloudflare 加速优化", 
+    "eSIM 卡申请配置", 
+    "美区 Apple ID 注册", 
+    "网络科技实用工具", 
+    "个人网站运营", 
+    "SmallStep 建站心得及汇总", 
+    "博客精选技术专栏随笔", 
+    "个人博客架构搭建分享", 
+    "网站日常开发除", 
+    "实用网络科技极客工具整理"
+    ]
+

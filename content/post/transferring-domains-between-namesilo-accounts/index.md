@@ -3,9 +3,11 @@ title: "NameSilo账户之间互转域名"
 date: 2025-10-12
 draft: false
 description: "在NameSilo账户之间快速互转域名的方法"
+keywords: ["Namesilo 域名 Push", "账号间无缝转移域名", "二手域名在线交易", "Namesilo 面板设置", "域名管理操作技巧"]
 url: "transferring-domains-between-namesilo-accounts"
+image: transferring-domains-between-namesilo-accounts.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 网络

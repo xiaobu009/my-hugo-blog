@@ -3,9 +3,10 @@ title: "1-2026 年为什么还选 Hugo？"
 date: 2026-03-26T09:37:23+08:00
 draft: false
 description: ""
+keywords: ["2026 建站程序选择", "Hugo 性能优势", "静态网站生成器对比", "Hexo VS Hugo", "个人独立博客搭建方案"]
 url: "2026-hugo-why"
 categories:
-    - Hugo建站
+    - station
 tags:
     - Hugo
     - 静态站点

@@ -3,9 +3,11 @@ title: "Cloudflare上托管SpaceShip域名的方法"
 date: 2025-10-15
 draft: false
 description: "SpaceShip上购买域名，修正域名服务器无效，A记录解析异，禁用和启用DNSSEC托管域名的设置过程。"
+keywords: ["Spaceship 域名购买", "Cloudflare DNS 解析", "免费域名托管", "CDN 防火墙配置", "建站域名接入"]
 url: "spaceship-domain-on-cloudflare"
+image: spaceship-domain-on-cloudflare.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 域名

@@ -3,9 +3,10 @@ title: "Cloudflare上托管域名并设置邮件转发"
 date: 2023-08-18
 draft: false
 description: "Cloudflare上托管域名并设置邮件转发服务，来获得拥有自己域名后缀的邮箱"
+keywords: ["独家域名邮箱免费托管", "Cloudflare 电子邮件转发", "自定义企业前缀域名邮箱", "小微个人专属邮件系统", "多别名代收发无服务器方案"]
 url: "managed-domain-mail-forwarding"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 域名
     - Email

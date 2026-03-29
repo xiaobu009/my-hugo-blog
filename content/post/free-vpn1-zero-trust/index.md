@@ -3,9 +3,11 @@ title: "[免费科学上网-1] 不绑信用卡申请Cloudflare团队账户（Zer
 date: 2023-10-07
 draft: false
 description: "通过设置Cloudflare的Zero Trust账户，获取无限流量，免费科学上网，看油管，看奈菲，使用Midjourney等应用"
+keywords: ["Cloudflare 新手基础配置", "独立网站防 DDoS 盾", "CDN 云端防火墙规则", "免费网络防御加速", "网站 HTTPS 强制加密开启"]
 url: "cloudflare-1"
+image: free-vpn1-zero-trust.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

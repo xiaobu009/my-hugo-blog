@@ -3,10 +3,12 @@ title: "2年超长时效的流量卡-Eskimo "
 date: 2024-10-26
 draft: false
 description: "新加坡原生本地流量，家庭宽带IP，打开即外网"
+keywords: ["Eskimo eSIM", "免费全球漫游流量", "境外旅游出国上网", "eSIM 套餐申请流程", "国际跨国漫游数据激活"]
+image: eskimo.webp
 url: "eskimo"
 categories:
-    - 技术分享
-    - 科学上网
+    - Technology
+    - Internet
 tags:
     - 工具
     - 网络

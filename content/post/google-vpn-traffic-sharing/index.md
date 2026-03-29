@@ -3,9 +3,11 @@ title: "Google VPN流量共享给电脑的方法"
 date: 2025-12-22
 draft: false
 description: "如何在PC使用Pixel手机上的Google-VPN流量"
+keywords: ["Google One VPN", "VPN 流量共享", "多设备连接翻墙", "全家桶科学上网", "网络加速工具测评"]
 url: "google-vpn-traffic-sharing"
+image: google-vpn-traffic-sharing.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 工具
     - 网络

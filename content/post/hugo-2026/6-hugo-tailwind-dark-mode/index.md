@@ -3,9 +3,10 @@ title: "6-Hugo 美化进阶：Tailwind CSS + 暗黑模式 + 自定义样式（St
 date: 2026-03-28T19:38:23+08:00
 draft: false
 description: "基于 Hugo Stack 主题，讲解如何覆盖原生样式，引入 Tailwind CSS 思想，完善暗黑模式体验，打造个性化博客。"
+keywords: ["Hugo 主题美化", "Tailwind CSS", "暗黑模式适配", "Hugo Stack 主题", "前端页面样式开发", "博客个性化定制"]
 url: "hugo-tailwind-dark-mode"
 categories:
-    - Hugo建站
+    - station
 tags:
     - Hugo
     - 静态站点

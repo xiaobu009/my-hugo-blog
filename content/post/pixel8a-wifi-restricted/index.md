@@ -3,9 +3,11 @@ title: "谷歌Pixel8手机网络受限问题的解决办法"
 date: 2025-11-17
 draft: false
 description: "在国内网络环境下，谷歌Pixel8a手机连接wifi出现网络受限的提示的修正方法"
+keywords: ["Pixel 8a WiFi 受限", "网络连接异常感叹号", "Captive Portal 验证修改", "原生安卓国内连网设置", "ADB 解决网络状态"]
 url: "pixel8a-wifi-restricted"
+image: pixel8a-wifi-restricted Thumbnail.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 网络
 ---

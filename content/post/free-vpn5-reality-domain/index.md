@@ -3,9 +3,11 @@ title: "[免费科学上网-5] 自选Reality目标网站域名"
 date: 2023-11-05
 draft: false
 description: "识别CDN节点，自选Reality目标网站，避免成为别人的反代加速节点"
+keywords: ["V2ray Reality", "寻找高权重伪装域名", "TLS 指纹特征识别", "GFW 防封阻断技术", "高安全性隧道代理节点"]
 url: "reality-domain"
+image: free-vpn5-reality-domain.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

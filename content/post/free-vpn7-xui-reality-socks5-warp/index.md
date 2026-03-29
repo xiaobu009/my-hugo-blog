@@ -3,9 +3,11 @@ title: "[免费科学上网-7] Xui+Reality下Socks5分流设置"
 date: 2024-03-13
 draft: false
 description: "Socks5分流，解锁ChatGPT访问限制（移动端，PC端）"
+keywords: ["X-UI 面板搭建", "VLESS-Reality 协议配置", "Socks5 全局代理", "Cloudflare WARP 解锁", "新手科学上网节点搭建"]
 url: "xui-reality-socks5-warp"
+image: free-vpn7-xui-reality-socks5-warp.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

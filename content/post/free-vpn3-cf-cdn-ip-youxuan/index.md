@@ -3,9 +3,11 @@ title: "[免费科学上网-3] 反代IP优选、CDN-IP优选、CDN域名优选"
 date: 2023-11-10
 draft: false
 description: "通过CDN-IP优选，反代CF-IP优选，打造自己的优选域名，锁住区域，实现稳定科学上网" 
+keywords: ["Cloudflare 优选 IP", "CDN 国内加速优化", "CF 自动测速自选节点", "提升网站秒开速度", "前端网络访问延迟优化"]
 url: "cf-cdn-ip-youxuan"
+image: free-vpn3-cf-cdn-ip-youxuan.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

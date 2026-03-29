@@ -3,10 +3,11 @@ title: "【2024年新】最便捷使用eSIM的方式，国航手机秒变eSIM手
 date: 2024-09-18
 draft: false
 description: "让国航手机秒变eSIM手机，轻松添加国外手机卡、流量卡，一次解决手机、短信、网络问题"
+keywords: ["5ber eSIM 卡购买", "5ber 官方教程", "APP 蓝牙写入 eSIM", "无 eSIM 槽手机解决方案", "海外通用流浪卡写卡"]
 url: "5ber-card-setup"
 categories:
-    - 技术分享
-    - 科学上网
+    - Technology
+    - Internet
 tags:
     - 工具
     - 网络

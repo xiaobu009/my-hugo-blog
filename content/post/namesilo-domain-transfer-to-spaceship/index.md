@@ -3,9 +3,11 @@ title: "NameSilo域名迁移到Spaceship的全过程＋省了多少年费？"
 date: 2025-10-24
 draft: false
 description: "实测完整迁移流程，转移费用、转移时间，还有这么折腾到底能省多少钱?"
+keywords: ["Namesilo 域名转移", "Spaceship 注册商", "域名平滑转出", "低成本便宜域名续费", "域名管理中心操作"]
 url: "namesilo-domain-transfer-to-spaceship"
+image: namesilo-domain-transfer-to-spaceship.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 网络

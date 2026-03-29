@@ -3,9 +3,11 @@ title: "[免费科学上网-6] IP优选测速为什么为零？"
 date: 2023-12-14
 draft: false
 description: "IP优选测速为什么为零、怎么获取可用测速链接、如何创建自建的测速地址"
+keywords: ["VPS 测速一键脚本", "服务器 IP 节点测试", "网络连通性 Ping", "延迟丢包测试", "三网回程路由追踪分析"]
 url: "ip-test-address"
+image: free-vpn6-ip-test-address.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

@@ -3,9 +3,10 @@ title: "VPS线路质量测试"
 date: 2023-08-18
 draft: false
 description: "VPS线路质量测试，查看网络延时，路由跟踪，及平台工具的使用"
+keywords: ["Linux VPS 线路测试", "CN2 GIA 顶级骨干网测图", "联通 9929 As4837", "移动 CMI 线路真假判定", "融合怪一键系统测速检测"]
 url: "vps-line-test"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 网络

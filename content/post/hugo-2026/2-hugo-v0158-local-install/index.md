@@ -3,9 +3,10 @@ title: "2-Hugo v0.158 本地安装 + 创建第一个站点"
 date: 2026-03-27T09:37:23+08:00
 draft: false
 description: ""
+keywords: ["Hugo v0.158 下载", "Hugo 安装教程", "本地建站开发环境", "Windows 配置 Hugo 环境", "静态建站零基础入门"]
 url: "hugo-v0158-local-install"
 categories:
-    - Hugo建站
+    - station
 tags:
     - Hugo
     - 静态站点

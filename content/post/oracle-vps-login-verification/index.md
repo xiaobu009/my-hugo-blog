@@ -3,9 +3,11 @@ title: "甲骨文云登录验证器的更换方法-（2026年最新）"
 date: 2026-01-16
 draft: false
 description: "骨文云登录验证器改为谷歌验证器的方法"
+keywords: ["Oracle 云服务器", "甲骨文 VPS", "免费永久云主机申请", "VPS 防封号玄学", "登录二次验证设置"]
 url: "oracle-vps-login-verification"
+image: oracle-vps-login-verification-thumbnail.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 网络

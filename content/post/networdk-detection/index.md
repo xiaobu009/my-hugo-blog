@@ -5,7 +5,7 @@ draft: false
 description: "IP纯净度检测、美国IP验证、测速、美国地址生成、其它综合工具"
 url: "content-10"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 网络
 ---

@@ -3,9 +3,10 @@ title: "3-2026 Hugo Stack 主题实操"
 date: 2026-03-28T13:37:23+08:00
 draft: false
 description: "PaperMod / Stack 主题模板"
+keywords: ["2026 Hugo 主题推荐", "最佳静态博客主题", "极简风博客模板", "Stack 主题测评", "开源个人网站主题"]
 url: "2026-best-hugo-themes"
 categories:
-    - Hugo建站
+    - station
 tags:
     - Hugo
     - 静态站点

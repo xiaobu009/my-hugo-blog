@@ -3,9 +3,10 @@ title: "GitHub3.2.9或更高桌面版安装及汉化"
 date: 2023-08-20
 draft: false
 description: "运行在windows系统上，GitHub官方出品的Git桌面应用程序安装及汉化"
+keywords: ["GitHub 汉化项目插件", "浏览器油猴浏览器脚本", "国内开发者开源社区", "全站中文汉化设置工具", "程序员英语提升效率神器"]
 url: "github-sinicization"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
 ---

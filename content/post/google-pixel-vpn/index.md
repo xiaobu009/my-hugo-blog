@@ -3,9 +3,11 @@ title: "一款不能错过的免费VPN应用→Google VPN"
 date: 2025-12-22
 draft: false
 description: "受限地区如何开启谷歌Pixel手机上的Google VPN应用"
+keywords: ["Pixel 手机", "Google One VPN 设置", "原生安卓 VPN", "安卓手机免流上网", "外版手机网络优化"]
 url: "google-vpn-pixel"
+image: google-pixel-vpn.webp
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 工具
     - 网络

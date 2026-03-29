@@ -3,9 +3,10 @@ title: "什么是原生IP、住宅IP、机房IP、商务IP、及IP纯净度"
 date: 2023-09-17
 draft: false
 description: " 一篇文章带您了解什么是原生IP，住宅IP，机房IP，以及如何判断IP纯净度"
+keywords: ["原生 IP (Native IP)", "广播 IP 区别", "国外 VPS 独立 IP 检测工具", "跨区流媒体视频解锁", "Netflix 等节点精准鉴别"]
 url: "yuansheng-ip"
 categories:
-    - 技术分享
+    - Technology
 tags:
     - 网络
 ---

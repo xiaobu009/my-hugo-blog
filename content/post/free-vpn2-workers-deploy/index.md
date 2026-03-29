@@ -2,10 +2,12 @@
 title: "[免费科学上网-2] 部署Workers脚本，免费科学上网"
 date: 2023-10-26
 draft: false
-description: "通过workers将vless部署到Cloudflare中,无障碍访问奈菲 ChatGPT" 
+description: "通过workers将vless部署到Cloudflare中,无障碍访问奈菲 ChatGPT"
+keywords: ["Cloudflare Workers 开发", "免费节点代理一键部署", "边缘节点计算平台", "无服务器微代理应用", "轻量化反向代理设置教程"]
 url: "workers-deployment"
+image: free-vpn2-workers-deploy.webp
 categories:
-    - 科学上网
+    - Internet
 tags:
     - 网络
 ---

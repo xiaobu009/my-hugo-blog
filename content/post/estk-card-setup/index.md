@@ -3,10 +3,12 @@ title: "[2024]完美替代5ber的eSIM实体卡-ESTK卡"
 date: 2024-10-12
 draft: false
 description: "STK卡的购买安装及使用，iPhone免插拔轻松管理eSIM"
+keywords: ["ESTK 实体卡", "eSIM 写卡转换实体", "5G 实体 eSIM", "国行手机不支持 eSIM 方案", "全球移动通信网络配置"]
 url: "estk-card-setup"
+image: estk-card-setup.webp
 categories:
-    - 技术分享
-    - 科学上网
+    - Technology
+    - Internet
 tags:
     - 工具
     - 网络
