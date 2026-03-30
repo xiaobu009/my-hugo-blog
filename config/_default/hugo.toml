@@ -22,3 +22,6 @@ hasCJKLanguage         = false
     shortname = "hugo-theme-stack"
 
 enableRobotsTXT = true
+
+# Google Analytics 4 配置
+googleAnalytics = 'G-TNQ1BKVC2E'
