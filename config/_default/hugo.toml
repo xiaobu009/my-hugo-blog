@@ -23,5 +23,3 @@ hasCJKLanguage         = false
 
 enableRobotsTXT = true
 
-# Google Analytics 4 配置
-googleAnalytics = 'G-TNQ1BKVC2E'
