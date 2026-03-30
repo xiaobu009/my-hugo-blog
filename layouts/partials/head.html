@@ -1,15 +1,7 @@
 <head>
-    <!-- Stack 主题原有的 head 内容会在这里被覆盖，你可以先复制 themes/hugo-theme-stack/layouts/partials/head.html 的内容 -->
+    <!-- 这里可以复制 Stack 主题原有的 head 内容（可选） -->
+    <!-- 原主题 head 文件路径：themes/hugo-theme-stack/layouts/partials/head.html -->
 
-    <!-- Google Analytics（Hugo 内置模板） -->
-    {{/* {{ template "_internal/google_analytics.html" . }} */}}
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNQ1BKVC2E"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-TNQ1BKVC2E');
-    </script>
+    <!-- Google Analytics（Hugo 内置 GA4 模板） -->
+        {{ template "_internal/google_analytics.html" . }}
 </head>
