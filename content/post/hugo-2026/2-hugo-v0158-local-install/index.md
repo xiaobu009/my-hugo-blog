@@ -65,7 +65,7 @@ hugo new site my-hugo-blog
 ![新站点结构](hugo-path-007.webp)
 
 ## 5. 本地运行新站点
-打开命令行`PowerShell` or `PowerShell`，切换到新建的站点目录（比如 `C:\web\my-hugo-blog`），运行如下命令：
+打开命令行`cmd` or `PowerShell`，切换到新建的站点目录（比如 `C:\web\my-hugo-blog`），运行如下命令：
 ```code
 hugo server -D 命令，或 hugo server -D  命令
 ```
