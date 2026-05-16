@@ -29,7 +29,7 @@ tags:
 Hugo 默认会自动生成 Sitemap。我们需要确保的是在根目录的 `hugo.toml` 中配置了正确的 `baseURL`：
 
 ```toml
-baseURL = "https://smallstep.top/" # 必须为真实域名
+baseURL = "https://smallstep.one/" # 必须为真实域名
 enableRobotsTXT = true # 开启自动生成 robots.txt
 ```
 
@@ -74,7 +74,7 @@ Hugo Pipes 会自动抓取页面引用的 CSS、JS 以及 HTML，对空白符和
 长达 8 篇的《2026 年从零开始 Hugo 建站入门到进阶系列》到这里就圆满结束了！
 从如何选择一个快速的框架，到理解 Markdown 的哲学；从配置主题的艺术，到 Git 自动化部署的顺畅，这正是技术博客最迷人的折腾过程。
 
-希望这些记录在 **[smallstep.top](/)** 的教程能为你搭建数字花园提供有力的帮助。如果有任何问题，欢迎回到主页查看更多建站折腾笔记。Keep Learning!
+希望这些记录在 **[smallstep.one](/)** 的教程能为你搭建数字花园提供有力的帮助。如果有任何问题，欢迎回到主页查看更多建站折腾笔记。Keep Learning!
 
 ---
 

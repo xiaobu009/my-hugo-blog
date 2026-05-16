@@ -18,9 +18,10 @@ favicon        = "img/avatar.png"
 [widgets]
     homepage = [
         { type = "search" },
-        { type = "archives", params = { limit = 2 } },
+        { type = "featured" },
         { type = "categories", params = { limit = 10 } },
         { type = "tag-cloud", params = { limit = 20 } },
+        { type = "archives", params = { limit = 2 } },
     ]
     page     = [
         { type = "toc" },

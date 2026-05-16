@@ -1,0 +1,19 @@
+.widget {
+    .widget-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+
+        .widget-icon {
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .widget-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+    }
+}
