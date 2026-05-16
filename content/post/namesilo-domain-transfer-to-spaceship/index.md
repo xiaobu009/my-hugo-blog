@@ -12,6 +12,7 @@ tags:
     - 工具
     - 网络
     - 域名
+featured: true
 ---
 
 {{< youtube FCGh2YNWflM >}}

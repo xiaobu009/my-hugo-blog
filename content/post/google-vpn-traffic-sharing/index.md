@@ -7,10 +7,11 @@ keywords: ["Google One VPN", "VPN 流量共享", "多设备连接翻墙", "全�
 url: "google-vpn-traffic-sharing"
 image: google-vpn-traffic-sharing.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 工具
     - 网络
+    - 科学上网
 featured: true
 ---
 

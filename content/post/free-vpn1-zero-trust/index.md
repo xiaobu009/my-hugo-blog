@@ -7,9 +7,10 @@ keywords: ["Cloudflare 新手基础配置", "独立网站防 DDoS 盾", "CDN 云
 url: "cloudflare-1"
 image: free-vpn1-zero-trust.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>

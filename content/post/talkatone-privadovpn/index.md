@@ -8,10 +8,11 @@ url: "talkatone-tools"
 image: talkatone-privadovpn.webp
 categories:
     - Technology
-    - Internet
 tags:
     - 工具
     - 网络
+    - 科学上网
+featured: true
 ---
 
 <aside>

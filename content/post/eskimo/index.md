@@ -8,11 +8,12 @@ image: eskimo.webp
 url: "eskimo"
 categories:
     - Technology
-    - Internet
 tags:
     - 工具
     - 网络
     - eSIM
+    - 科学上网
+featured: true
 ---
 
 <aside>

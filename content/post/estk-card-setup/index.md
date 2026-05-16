@@ -8,11 +8,11 @@ url: "estk-card-setup"
 image: estk-card-setup.webp
 categories:
     - Technology
-    - Internet
 tags:
     - 工具
     - 网络
     - eSIM
+    - 科学上网
 ---
 
 <aside>

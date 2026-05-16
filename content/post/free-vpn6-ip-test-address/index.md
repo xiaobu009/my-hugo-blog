@@ -7,9 +7,11 @@ keywords: ["VPS 测速一键脚本", "服务器 IP 节点测试", "网络连通�
 url: "ip-test-address"
 image: free-vpn6-ip-test-address.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
+featured: true
 ---
 
 <aside>

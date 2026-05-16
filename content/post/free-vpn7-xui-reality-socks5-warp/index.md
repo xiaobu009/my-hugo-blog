@@ -7,9 +7,10 @@ keywords: ["X-UI 面板搭建", "VLESS-Reality 协议配置", "Socks5 全局代�
 url: "xui-reality-socks5-warp"
 image: free-vpn7-xui-reality-socks5-warp.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>

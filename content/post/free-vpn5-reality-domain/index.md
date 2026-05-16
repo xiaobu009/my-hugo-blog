@@ -7,9 +7,10 @@ keywords: ["V2ray Reality", "寻找高权重伪装域名", "TLS 指纹特征识�
 url: "reality-domain"
 image: free-vpn5-reality-domain.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>

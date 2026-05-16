@@ -7,9 +7,10 @@ keywords: ["AWS VPS 新手申请", "亚马逊云 12 个月免费额度", "EC2 �
 url: "aws-vps"
 image: free-vpn4-amazon-vps-xui-reality.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>

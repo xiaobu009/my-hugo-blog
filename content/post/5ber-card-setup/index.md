@@ -7,10 +7,10 @@ keywords: ["5ber eSIM 卡购买", "5ber 官方教程", "APP 蓝牙写入 eSIM", 
 url: "5ber-card-setup"
 categories:
     - Technology
-    - Internet
 tags:
     - 工具
     - 网络
+    - 科学上网
 ---
 
 <aside>

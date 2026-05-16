@@ -7,9 +7,10 @@ keywords: ["Cloudflare Workers 开发", "免费节点代理一键部署", "边�
 url: "workers-deployment"
 image: free-vpn2-workers-deploy.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>

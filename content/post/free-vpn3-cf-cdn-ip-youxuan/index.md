@@ -7,9 +7,10 @@ keywords: ["Cloudflare 优选 IP", "CDN 国内加速优化", "CF 自动测速自
 url: "cf-cdn-ip-youxuan"
 image: free-vpn3-cf-cdn-ip-youxuan.webp
 categories:
-    - Internet
+    - Technology
 tags:
     - 网络
+    - 科学上网
 ---
 
 <aside>
