@@ -1,3 +1,64 @@
+/* Place your custom SCSS in HUGO_SITE_FOLDER/assets/scss/custom.scss */
+
+/* 彻底去掉 TOC 的数字序号 */
+.toc-nav {
+    ol {
+        counter-reset: none !important;
+        li a:first-of-type::before {
+            content: none !important;
+            counter-increment: none !important;
+        }
+    }
+}
+
+/* 可选：如果想保持一点缩进但不要序号 */
+.toc-nav li {
+    margin-left: 1.2em;
+    padding-left: 0;
+}
+
+li a:hover {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* 缩小右侧 TOC 的行间距，让整体更紧凑 */
+.toc-nav {
+    line-height: 1.35;
+
+    li {
+        margin: 8px 0 8px 20px;
+        padding: 3px 5px;
+    }
+
+    li > ul,
+    li > ol {
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding-left: 12px;
+    }
+
+    a {
+        line-height: 1.35;
+        padding: 4px 0;
+    }
+
+    li.active-class > a {
+        padding: 4px 8px 4px 12px;
+    }
+}
+
+/* 极端紧凑模式（适合很多标题的文章） */
+.toc-nav {
+    line-height: 1.25;
+    li {
+        margin: 5px 0 5px 18px;
+    }
+}
+
+/* ================================================
+   右侧 Widget 标题：图标与文字左右并排
+   ================================================ */
 .widget {
     .widget-header {
         display: flex;
@@ -17,3 +78,4 @@
         }
     }
 }
+

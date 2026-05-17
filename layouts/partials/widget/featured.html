@@ -13,7 +13,7 @@
     <div class="widget-body">
         {{ range where .Context.Site.RegularPages "Params.featured" "==" true }}
         <a href="{{ .RelPermalink }}" 
-           style="display:block; padding:6px 0; border-bottom:1px solid var(--card-separator-color); font-size:1.6rem; line-height:1.6;">
+           style="display:block; padding:6px 0; border-bottom:1px solid var(--card-separator-color); font-size:1.4rem; line-height:1.4rem;">
             → {{ .Title }}
         </a>
         {{ end }}
