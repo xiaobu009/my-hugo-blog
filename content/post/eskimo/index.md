@@ -13,7 +13,6 @@ tags:
     - 网络
     - eSIM
     - 科学上网
-featured: true
 ---
 
 <aside>
