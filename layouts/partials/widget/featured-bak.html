@@ -10,19 +10,12 @@
         <h2 class="widget-title section-title">精选文章</h2>
     </div>
 
-<div class="widget-body">
-    {{ $context := .Context }}
-    {{ $limit := .Context.Site.Data.featured.limit | default 5 }}
-    {{ $featured := .Context.Site.Data.featured.posts }}
-    {{ range $index, $slug := first $limit $featured }}
-        {{ $page := index (where $context.Site.RegularPages "File.ContentBaseName" $slug) 0 }}
-        {{ if $page }}
-        <a href="{{ $page.RelPermalink }}"
-           style="display:block; padding:6px 0; border-bottom:1px solid var(--card-separator-color); font-size:1.6rem; line-height:1.6;
-          white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-    <span style="opacity:0.4; margin-right:6px;">{{ add $index 1 }}.</span>{{ $page.Title }}
+    <div class="widget-body">
+        {{ range where .Context.Site.RegularPages "Params.featured" "==" true }}
+        <a href="{{ .RelPermalink }}" 
+           style="display:block; padding:6px 0; border-bottom:1px solid var(--card-separator-color); font-size:1.4rem; line-height:1.4rem;">
+            → {{ .Title }}
         </a>
         {{ end }}
-    {{ end }}
-</div>
+    </div>
 </section>
