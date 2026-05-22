@@ -79,3 +79,61 @@ li a:hover {
     }
 }
 
+
+
+/* ================================================
+   文章内容页样式（仅针对内容页面生效）
+   ================================================ */
+.article-content {
+
+    /* 正文段落 */
+    p {
+        line-height: 1.8;
+        margin-bottom: 0.6em;
+        margin-top: 0.4em;
+    }
+
+    /* 列表 */
+    ul, ol {
+        li {
+            line-height: 1.5;
+            margin-bottom: 0.3em;
+        }
+    }
+
+    /* 标题与上下内容的间距 */
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 1.6em;
+        margin-bottom: 0.4em;
+        line-height: 1.4;
+    }
+
+    /* 分隔横线：充满整行 */
+    hr {
+        width: 100% !important;
+        margin: 1.8em 0 !important;
+        background: var(--card-separator-color);
+        height: 1px;
+        border: 0;
+        opacity: 0.8;
+    }
+}
+
+
+/* ================================================
+   文章页标题下方说明文字字号缩小
+   ================================================ */
+.article-page .article-subtitle {
+    font-size: 1.5rem !important;
+
+    @media (min-width: 1280px) {
+        font-size: 1.6rem !important;
+    }
+}
+
+/* ================================================
+   列表页文章卡片说明文字字号缩小
+   ================================================ */
+.article-list .article-subtitle {
+    font-size: 1.6rem !important;
+}

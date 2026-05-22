@@ -1,9 +1,10 @@
 ---
-title: "6-Hugo 美化进阶：Tailwind CSS + 暗黑模式 + 自定义样式（Stack 主题示例）"
+title: "6-Hugo 美化进阶：custom.scss 覆盖主题样式、主题色定制与暗黑模式调优"
 date: 2026-03-28T19:38:23+08:00
+lastmod: 2026-05-17
 draft: false
-description: "基于 Hugo Stack 主题，讲解如何覆盖原生样式，引入 Tailwind CSS 思想，完善暗黑模式体验，打造个性化博客。"
-keywords: ["Hugo 主题美化", "Tailwind CSS", "暗黑模式适配", "Hugo Stack 主题", "前端页面样式开发", "博客个性化定制"]
+description: "深入讲解 Hugo Stack 主题的样式覆盖机制，通过 custom.scss 实现主题色自定义、字体调整、暗黑模式细节优化，以及侧边栏 Widget 标题图标位置修改。无需改动主题源码，升级主题也不会丢失修改。"
+keywords: ["Hugo Stack 自定义样式", "custom.scss Hugo", "Hugo 主题色修改", "Hugo 暗黑模式", "Hugo Stack 美化", "Hugo SCSS 覆盖"]
 url: "hugo-tailwind-dark-mode"
 categories:
     - station
@@ -13,86 +14,444 @@ tags:
     - 建站教程
 ---
 
-## 6.1 让你的博客与众不同
+博客上线了，主题也装好了，但总觉得哪里不够"自己的"？
 
-Stack 是一款设计非常精美的 Hugo 主题，但在 [smallstep.top](/) 上，我们总希望能加入更多属于自己的个性化元素。在这一篇，我们将探讨如何安全地覆盖 Stack 的默认样式，以及如何利用最新的 CSS 功能增强暗黑模式。
-
-在前面的教程中，为了方便对主题进行深度自定义，我们选择了 `git clone` 方式将 Stack 主题直接安装在 `themes/hugo-theme-stack` 目录下。这正是此刻能够大显身手的基础！
-
-## 6.2 主题管理方式对比：Git Clone vs Hugo Module
-
-在开始修改样式之前，简要回顾一下我们为什么选择 Git Clone 安装主题：
-
-- **Git Clone（我们目前使用的方式）**：
-  将主题完整克隆至 `themes/`，文件全部在本地可见。
-  - *优点*：非常适合想要深度魔改主题结构、修改内部代码和资源结构的用户，所见即所得。
-  - *缺点*：后续上游主题更新修复时，由于我们本地修改过代码，可能会产生 Git 冲突，升级稍麻烦。
-
-- **Hugo Module（可选方式）**：
-  Hugo 官方近年来主推的 Go Modules 依赖管理方案。
-  - *优点*：保持项目干净，不直接拉取所有文件到本地；版本控制简单，一句命令即可更新到最新版主题。
-  - *缺点*：修改核心代码需要对 Hugo 的文件覆盖机制（Lookup Order）非常熟悉，心智负担较重。
-
-对于追求个性的我们，当前采用的深度克隆方式非常完美。下面进入正题！
+这一篇教你用 `custom.scss` 对 Stack 主题进行深度定制——修改主题色、调整字体大小、优化暗黑模式细节，以及我们在实际使用中真正改过的那些样式调整。**全程不需要动主题源码**，即使以后升级主题，你的修改也不会丢失。
 
 ---
 
-## 6.3 自定义 CSS 的正确姿势
+## 6.1 Stack 主题的样式覆盖机制
 
-Stack 主题提供了一个极佳的自定义入口。无需直接修改主题源码，而是通过在项目根目录创建自定义 CSS。
+Stack 主题预留了一个专门给用户自定义样式的入口：
 
-1. 在项目根目录创建（或编辑） `assets/scss/custom.scss`。
-2. 任何写在这里的 SCSS 代码，Hugo 都会在编译时自动覆盖主题的默认配置（得益于 Hugo 2026 主推的 css.Build 极速构建特性）。
+```
+assets/scss/custom.scss
+```
 
-### 实战：修改主题主色调
+这个文件如果不存在，新建一个就行。Hugo 在编译时会把这个文件的内容**追加到主题样式的最后**，利用 CSS 的级联优先级自动覆盖主题默认样式。
 
-假设我们要将默认蓝/深灰色调整为充满科技感的“赛博朋克紫”，打开 `custom.scss`：
+**这个机制的好处：**
+
+- **不修改主题源码**：主题文件夹里的任何内容都不需要动
+- **主题升级安全**：`git pull` 更新主题不会覆盖你的自定义样式
+- **即时生效**：`hugo server` 运行时，修改 `custom.scss` 保存后浏览器自动刷新
+
+**文件位置：**
+
+```
+你的博客根目录/
+└── assets/
+    └── scss/
+        └── custom.scss    ← 所有自定义样式都写在这里
+```
+
+> ⚠️ **注意是站点根目录的 `assets/`，不是 `themes/` 里面。** 写到主题目录里的修改会在主题升级时被覆盖。
+
+---
+
+## 6.2 Stack 主题的 CSS 变量体系
+
+Stack 主题的颜色、间距等核心样式都通过 CSS 变量定义，我们直接覆盖变量就能批量修改外观，不需要逐条找选择器。
+
+常用的 CSS 变量（在 `custom.scss` 里覆盖即可）：
 
 ```scss
 :root {
-    --accent-color: #8b5cf6; /* 紫色 */
-    --sys-color-primary: var(--accent-color);
+    // 主题强调色（链接、按钮、高亮等）
+    --accent-color: #3b82f6;
+    --accent-color-darker: #2563eb;
+
+    // 字体大小基准（整站字体缩放）
+    --article-font-size: 1.6rem;
+
+    // 卡片背景色
+    --card-background: #fff;
+    --card-separator-color: rgba(218, 218, 218, 0.5);
+
+    // 侧边栏背景
+    --sidebar-background-color: #f6f6f6;
+}
+
+// 暗色模式变量覆盖
+[data-scheme="dark"] {
+    --accent-color: #60a5fa;
+    --card-background: #1e2030;
+    --sidebar-background-color: #161b2e;
 }
 ```
 
-重新运行 `hugo server`，整个站点的链接、按钮等高亮颜色将瞬间发生变化！
+---
 
-<!-- ![修改主题颜色对比图](color-change.png) -->
+## 6.3 修改主题色
+
+Stack 默认的强调色是蓝色系。如果你想改成其他颜色，只需要覆盖两个变量：
+
+**改成绿色系（清新技术感）：**
+
+```scss
+:root {
+    --accent-color: #10b981;
+    --accent-color-darker: #059669;
+}
+
+[data-scheme="dark"] {
+    --accent-color: #34d399;
+    --accent-color-darker: #10b981;
+}
+```
+
+**改成橙色系（温暖个人风格）：**
+
+```scss
+:root {
+    --accent-color: #f97316;
+    --accent-color-darker: #ea580c;
+}
+
+[data-scheme="dark"] {
+    --accent-color: #fb923c;
+    --accent-color-darker: #f97316;
+}
+```
+
+> 💡 **颜色选择建议：** 推荐去 [Tailwind CSS 调色板](https://tailwindcss.com/docs/customizing-colors) 挑颜色，所有颜色都有深浅梯度，亮色模式用 `500`，暗色模式用 `400` 通常效果不错。
 
 ---
 
-## 6.4 暗黑模式 (Dark Mode) 深度定制
+## 6.4 调整字体大小
 
-现代博客暗黑模式是刚需。Stack 主题已经原生支持。但我们可以对细节更进一步：
+Stack 主题的字体大小基于 `rem` 单位，根元素（`html`）的字体大小决定整站基准。
 
-通过在全局 CSS 中添加媒体查询或特定的类名，微调暗黑模式下的组件阴影和背景纯度：
+**让全站文字略微放大（适合内容较多的博客）：**
 
 ```scss
-[data-scheme="dark"] {
-    --card-background: #111111;
-    --text-color: #e5e5e5;
-    
-    .article-details {
-        box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15); /* 加点紫色光晕 */
+// 桌面端
+@media (min-width: 1024px) {
+    :root {
+        font-size: 62.5%;    // 默认是 62.5%，即 1rem = 10px
+    }
+}
+
+// 文章正文字体大小
+.article-content {
+    font-size: 1.7rem;       // 默认 1.6rem，调大一点
+    line-height: 1.85;       // 行距也适当放宽
+}
+```
+
+**调整标题大小：**
+
+```scss
+.article-content {
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.9rem; }
+    h4 { font-size: 1.7rem; }
+}
+```
+
+---
+
+## 6.5 右侧 Widget 标题样式调整
+
+Stack 主题默认的 Widget 标题（如"精选文章"、"分类"、"标签云"）图标在上、文字在下，上下排列。如果你想让图标和文字左右并排显示，需要覆盖 Widget 模板并加样式。
+
+**第一步：在 `custom.scss` 里加入 Widget 标题 flex 布局**
+
+```scss
+// Widget 标题区域：图标和文字左右并排
+.widget {
+    .widget-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+
+        .widget-icon {
+            margin: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        h2.widget-title {
+            margin: 0;
+            font-size: 2rem;      // 标题字体大一号
+            line-height: 1;
+        }
     }
 }
 ```
 
-> [!WARNING]
-> **注意事项：** 当你测试暗黑模式时，记得同时清理浏览器缓存，或者开启无痕窗口，确认系统级跟随 (`prefers-color-scheme`) 与手动切换按钮均正常工作。
+**第二步：覆盖 Widget 模板文件**
+
+Stack 主题的每个 Widget 都有对应的 HTML 模板，需要把图标和标题包进一个 `.widget-header` 容器里。
+
+以归档 Widget 为例，复制主题文件到站点目录：
+
+```bash
+# 在站点根目录执行
+copy themes\hugo-theme-stack\layouts\_partials\widget\archives.html layouts\partials\widget\archives.html
+```
+
+打开复制过来的文件，把原来的结构：
+
+```html
+<!-- 原来：图标和标题分开，上下排列 -->
+<div class="widget-icon">
+    <svg>...</svg>
+</div>
+<h2 class="widget-title section-title">归档</h2>
+```
+
+改成：
+
+```html
+<!-- 改后：用 .widget-header 包裹，flex 左右并排 -->
+<div class="widget-header">
+    <div class="widget-icon">
+        <svg>...</svg>
+    </div>
+    <h2 class="widget-title section-title">归档</h2>
+</div>
+```
+
+对 `categories.html`（或其依赖的 `taxonomy.html`）和 `tag-cloud.html` 做同样的修改，自定义的 `featured.html` 也保持相同结构。
+
+> 💡 **为什么要复制到站点目录？** Hugo 的模板查找优先级是：站点 `layouts/` > 主题 `layouts/`。把文件复制到站点目录后修改，主题升级时不会覆盖你的改动。
 
 ---
 
-## 6.5 结合 Tailwind CSS 的思路 (进阶)
+## 6.6 暗黑模式细节优化
 
-得益于 Hugo v0.158 的原生能力，处理类似 Tailwind 这样的功能类库变得更加直观。如果你需要在你的 Markdown 中使用类似 Tailwind 的类名，可以在 `layouts/_default/baseof.html` 中引入轻量级的样式系统或借助 Hugo Pipes 处理。
+Stack 主题的暗色模式原生支持已经很完整，但有几个地方可以做得更精致：
 
-由于篇幅限制，此处我们更推荐优先使用纯 CSS/SCSS + 自定义 Shortcode 解决 95% 的博客样式需求，保持极佳的编译速度。
+**代码块在暗色模式下的背景色：**
+
+```scss
+[data-scheme="dark"] {
+    .highlight {
+        background-color: #1a1b2e !important;
+    }
+
+    // 行内代码背景
+    code:not(.noHighlight):not([class*="language-"]) {
+        background-color: rgba(255, 255, 255, 0.08);
+        color: #e2e8f0;
+    }
+}
+```
+
+**图片在暗色模式下轻微降低亮度（保护眼睛）：**
+
+```scss
+[data-scheme="dark"] {
+    .article-content img {
+        filter: brightness(0.9);
+        transition: filter 0.3s;
+
+        &:hover {
+            filter: brightness(1);  // 鼠标悬停时恢复原始亮度
+        }
+    }
+}
+```
+
+**卡片阴影在暗色模式下的调整：**
+
+```scss
+[data-scheme="dark"] {
+    .card-wrapper {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+        &:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+```
+
+---
+
+## 6.7 其他实用样式调整
+
+**文章列表摘要字体大小：**
+
+```scss
+.article-subtitle {
+    font-size: 1.4rem;
+    opacity: 0.75;
+}
+```
+
+**文章内表格样式增强（Stack 主题默认表格样式较基础）：**
+
+```scss
+.article-content {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 1.4rem;
+
+        th {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 9px 14px;
+            border-bottom: 1px solid var(--card-separator-color);
+        }
+
+        tr:nth-child(even) td {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+
+        tr:hover td {
+            background-color: rgba(59, 130, 246, 0.05);
+        }
+    }
+}
+
+[data-scheme="dark"] {
+    .article-content {
+        tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+    }
+}
+```
+
+**首页文章列表卡片的封面图高度（默认偏矮）：**
+
+```scss
+// 让首页卡片封面图更高，视觉更舒展
+.article-list--tile article .article-image img {
+    height: 220px;
+    object-fit: cover;
+}
+```
+
+**侧边栏文章标题字体放大：**
+
+```scss
+.widget-body a {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+```
+
+---
+
+## 6.8 修改后的 custom.scss 完整模板
+
+把上面所有调整整合在一起，下面是一份适合中文技术博客的 `custom.scss` 完整起步模板，按需取用：
+
+```scss
+// ===== 1. 主题色 =====
+:root {
+    --accent-color: #3b82f6;
+    --accent-color-darker: #2563eb;
+}
+
+[data-scheme="dark"] {
+    --accent-color: #60a5fa;
+}
+
+// ===== 2. 字体 =====
+.article-content {
+    font-size: 1.7rem;
+    line-height: 1.85;
+
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.9rem; }
+}
+
+// ===== 3. Widget 标题图标并排 =====
+.widget {
+    .widget-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 14px;
+
+        .widget-icon {
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        h2.widget-title {
+            margin: 0;
+            font-size: 2rem;
+        }
+    }
+}
+
+// ===== 4. 暗色模式细节 =====
+[data-scheme="dark"] {
+    .article-content img {
+        filter: brightness(0.9);
+        &:hover { filter: brightness(1); }
+    }
+
+    code:not(.noHighlight):not([class*="language-"]) {
+        background-color: rgba(255, 255, 255, 0.08);
+    }
+}
+
+// ===== 5. 表格增强 =====
+.article-content {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 1.4rem;
+
+        th {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 10px 14px;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 9px 14px;
+            border-bottom: 1px solid var(--card-separator-color);
+        }
+
+        tr:nth-child(even) td {
+            background-color: rgba(0,0,0,0.02);
+        }
+    }
+}
+```
+
+---
+
+## 本篇小结
+
+通过 `custom.scss`，你已经掌握了 Stack 主题样式定制的核心方法：
+
+- ✅ 理解了 Stack 主题的样式覆盖机制，改动安全不影响主题升级
+- ✅ 学会了通过 CSS 变量批量修改主题色
+- ✅ 调整了字体大小和行距，让中文阅读更舒适
+- ✅ 优化了暗黑模式下的图片、代码块和卡片阴影细节
+- ✅ 增强了表格样式，让文章内的对比表格更清晰
+
+下一篇是部署篇——把本地博客推送到 GitHub，连接 Cloudflare Pages 实现自动化全球部署。
 
 ---
 
 ## 系列导航
 
-- **上一篇回顾：** [5-Hugo 自定义 shortcode 实战：常见嵌入功能](/hugo-custom-shortcode/)
-- **下一篇预告：** [7-Hugo + Cloudflare Pages 自动化部署完整教程](/hugo-cloudflare-pages-deploy/)
-- **返回 SmallStep 系列教程目录：** [2026 年从零开始 Hugo 建站入门到进阶系列](/categories/hugo建站/)
+- **上一篇：** [5-Hugo 自定义 Shortcode 实战：提示框、卡片链接、图片画廊](/hugo-custom-shortcode/)
+- **下一篇：** [7-Hugo + Cloudflare Pages 自动化部署完整教程](/hugo-cloudflare-pages-deploy/)
+- **返回系列目录：** [2026 年从零开始 Hugo 建站入门到进阶系列](/categories/station/)
