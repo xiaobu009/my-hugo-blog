@@ -4,7 +4,7 @@ description: "关于我们 (About Us)"
 date: 2023-07-02T09:37:23+08:00
 menu:
     main: 
-        weight: -90
+        weight: -80
         params:
             icon: user
 ---
