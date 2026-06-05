@@ -1,5 +1,5 @@
 ---
-title: "免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南"
+title: "初级02-免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南"
 date: 2026-05-30
 lastmod: 2026-05-30
 draft: false

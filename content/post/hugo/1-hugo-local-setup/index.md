@@ -1,5 +1,5 @@
 ---
-title: "零基础搭建个人博客——Hugo + Stack 4.0 本地环境完整指南"
+title: "初级01-零基础搭建个人博客——Hugo + Stack 4.0 本地环境完整指南"
 date: 2026-05-30
 lastmod: 2026-05-30
 draft: false
@@ -12,6 +12,7 @@ tags:
     - Stack主题
     - 建站入门
 url: "hugo-local-setup"
+image: images/beginner-Thumbnail.webp
 series: ["Hugo建站指南"]
 series_order: 1
 ---
@@ -25,6 +26,8 @@ series_order: 1
 整个过程需要安装三个工具、运行几条命令、改几行配置。**不需要编程基础，照着做就能完成。**
 
 ---
+
+{{< youtube Sw3Pf_CTcRo >}}
 
 ## 第一步：安装 Git
 
@@ -90,7 +93,7 @@ Hugo 有两个版本：普通版和 Extended 版。Stack 主题用到了 SCSS �
 
 3. 打开**系统环境变量**：按 `Win + S` 搜索「编辑系统环境变量」，点击「环境变量」
 
-   **或者** 鼠标右键点  [此电脑]  - [属性] - [高级系统设置] - [环境变量] 
+   **或者** 鼠标右键点  「此电脑」  - 「属性」 - 「高级系统设置」 - 「环境变量」
 
 4. 在「系统变量」里找到 `Path`，双击
 
@@ -185,7 +188,7 @@ myblog/
 └── hugo.toml       ← 站点配置文件，核心配置都在这里
 ```
 
-现在最重要的三个文件夹是：**content**（放文章）、**themes**（放主题）、**config**（放配置，下一步会用到）。
+现在最重要的三个文件夹是：**content**（放文章）、**themes**（放主题）、**config**（放配置，下一步会用到，后会创建）。
 
 运行本地服务启动站点：
 
@@ -251,7 +254,7 @@ baseURL = 'https://example.org/'
 locale = 'en-us'
 title = 'My New Hugo Project'
 
-theme = 'hugo-theme-stack'     ← 加载模板，模板文件夹名（hugo-theme-stack）就是模板名称
+theme = 'hugo-theme-stack'   ← 加载模板，模板名称就是文件夹名称「hugo-theme-stack」
 
 ```
 
@@ -312,7 +315,7 @@ cp -r themes/hugo-theme-stack/demo/content/page ./content/
 
 ### 删除默认配置文件
 
-Hugo 创建站点时自动生成了一个 `hugo.toml`，现在已经由 `config/_default/` 目录接管，需要删掉这个文件避免冲突：
+Hugo 创建站点时自动生成了一个 `hugo.toml` [ 位置：`myblog/hugo.toml` ]，现在已经由 `config/_default/` 目录接管，需要删掉这个文件避免冲突：
 
 ```
 # Windows
