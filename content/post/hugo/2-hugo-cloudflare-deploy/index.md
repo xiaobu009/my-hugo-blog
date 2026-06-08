@@ -3,7 +3,7 @@ title: "初级02-免费把博客发布到全球——GitHub + Cloudflare Pages �
 date: 2026-05-30
 lastmod: 2026-05-30
 draft: false
-description: "手把手教你把本地 Hugo 博客推送到 GitHub，再通过 Cloudflare Pages 自动部署上线，做完这篇你就拥有一个真实可访问的个人博客。"
+description: "手把手带你把本地 Hugo 博客推送到 GitHub，再通过 Cloudflare Pages 自动部署上线，按照步骤一步步做完，你就拥有了一个真实可访问的个人博客。"
 keywords: ["Hugo", "Cloudflare Pages", "GitHub", "部署", "建站"]
 categories:
     - Hugo建站指南
@@ -13,6 +13,7 @@ tags:
     - GitHub
     - 建站入门
 url: "hugo-cloudflare-deploy"
+image: images/hugo-cloudflare-deploy-Thumbnail.webp
 series: ["Hugo建站指南"]
 series_order: 2
 ---
@@ -21,7 +22,7 @@ series_order: 2
 
 一个绑定了自定义域名、任何人都能访问的个人博客。
 
-你在本地改完文章，运行几条命令推送到 GitHub，Cloudflare 自动帮你构建和发布，全程免费，全球访问速度有保障。
+你在本地改完文章，运行几条命令推送到 GitHub，Cloudflare 就能自动帮你构建和发布，全程免费，CDN加速全球访问有保障。
 
 **前提：已完成第一篇，本地能正常运行 `hugo server -D`。**
 
@@ -52,6 +53,8 @@ GitHub 是存放博客代码的地方，Cloudflare Pages 会从这里拉取代�
 后三项全部保持默认不动，保证创建出来的是一个空仓库。
 
 点击 **Create repository**，仓库创建成功后页面会显示一串命令，先留着，下一步会用到。
+
+![](images/hcd-005.webp)
 
 ---
 
@@ -152,19 +155,44 @@ git push -u origin main
 
 ## 第四步：注册 Cloudflare 并连接 GitHub
 
-Cloudflare Pages 是免费的静态网站托管服务，每次你推送代码到 GitHub，它会自动重新构建并发布你的博客。
+代码推到 GitHub 了，但还只是一堆数据，接下来的部署，就是让这些数据，变成可直接访问的页面。并且每当我们 push 代码到 GitHub时，Cloudflare 就会检测到变化，并自动拉取代码，构建，发布，完全自动化，不再需要我们做任何操作。
 
-### 注册账号
+### 登录账号
 
 打开 [cloudflare.com](https://cloudflare.com)，点击右上角 **Sign Up**，填写邮箱和密码完成注册。已有账号直接登录。
 
 ### 创建 Pages 项目
 
-登录后在左侧菜单【构建->计算】下找到 **Workers & Pages**，点击进入，然后点击 **Create（创建应用程序）*，选择 **Pages** 标签，选**导入现有 Git 存储库**，点击 **开始使用**。
+1、登录后，左侧菜单「**构建**」->「**计算**」下找到 **Workers & Pages**，点击进入
 
-选择 **GitHub**，点击 **Connect GitHub**，在弹出的窗口里授权 Cloudflare 访问你的 GitHub 账号（选 All repositories，然后点 **Install & Authorize** 按钮 ）。
+![](images/cf-001.webp)
 
-授权完成后，在仓库列表里找到刚才创建的 `myblog` 仓库，点击选中，然后点击 **Begin setup**。
+2、点 **Create（创建应用程序）**
+
+![](images/cf-002.webp)
+
+3、选下面的「**想要部署pages**？」旁边的「**开始使用**」
+
+![](images/cf-003.webp)
+
+4、「开始使用」页面中，选「**导入现有 Git 存储库**」
+
+![](images/cf-004.webp)
+
+5、「从你的账户部署站点」页面，选「**GitHub** 」选项卡，点击 **链接GitHub**
+
+![](images/cf-005.webp)
+
+6、在弹出的窗口里授权 Cloudflare 访问你的 GitHub 账号（选 **All repositories**，然后点 **Install & Authorize** 按钮 ）
+
+7、输入GitHub登录密码 ，提交验证
+
+![](images/cf-006.webp)
+![](images/cf-007.webp)
+
+8、授权完成后，在仓库列表里找到我们创建的 `myblog` 仓库，点击选中，然后点击 **「开始设置」**
+
+![](images/cf-008.webp)
 
 ---
 
