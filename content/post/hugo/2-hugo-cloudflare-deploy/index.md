@@ -26,6 +26,8 @@ series_order: 2
 
 **前提：已完成第一篇，本地能正常运行 `hugo server -D`。**
 
+{{< youtube Era0qPLw0z8 >}}
+
 ---
 
 ## 第一步：注册 GitHub 账号并创建仓库
