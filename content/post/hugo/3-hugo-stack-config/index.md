@@ -17,8 +17,7 @@ series_order: 3
 url: "hugo-stack-config"
 ---
 
-完整访问地址：https://smallstep.one/hugo-stack-config/
-
+{{< youtube 0MFD1U5tOtU >}}
 ---
 
 ## 做完这篇你能得到什么
