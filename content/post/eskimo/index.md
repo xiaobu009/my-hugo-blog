@@ -126,11 +126,16 @@ Eskimo eSIM卡支持5次下载写入，每次写入前需删除上一次写入�
 支持Windows、Android、macOS、iOS/iPadOS、Router多种客户端。
 
 * **2、Eskimo流量卡：**<br>[https://s.ospace.top/mw9qyz](https://s.ospace.top/mw9qyz)
-**邀请码：BD995** 得500MB两年有效期的免费全球数据流量。
-Eskimo是流量卡不含号码，支持80多个国家/地区漫游，从第一次激活使用流量开始计算，长达2年有效期，并且非免费赠送流量可转送到其它Eskimo账户。
-购买中国区域流量或全球流量，如果在中国使用走的是新加坡网络链路，获取的是新加坡的住宅IP，非常适合申请国外应用及保号。
+  **邀请码：BD995** 得500MB两年有效期的免费全球数据流量。
+  Eskimo是流量卡不含号码，支持80多个国家/地区漫游，从第一次激活使用流量开始计算，长达2年有效期，并且非免费赠送流量可转送到其它Eskimo账户。
+  购买中国区域流量或全球流量，如果在中国使用走的是新加坡网络链路，获取的是新加坡的住宅IP，非常适合申请国外应用及保号。
+
 * **3、ReadteaGO流量卡:**<br>
-ReadteaGO链接: [https://esim.redteago.com/?c=i5oq82b3](https://esim.redteago.com/?c=i5oq82b3)<br>
-ReadteaGO优惠码（**5% 折扣**）：**RTGF8F49L**
+  ReadteaGO链接: [https://esim.redteago.com/?c=i5oq82b3](https://esim.redteago.com/?c=i5oq82b3)<br>
+  ReadteaGO优惠码（**5% 折扣**）：**RTGF8F49L**
+
 * **4、域名注册Namesilo：**[https://www.namesilo.com/](https://www.namesilo.com/)  （**Coupons优惠码：092368xb**）
-* **5、SMS-Activate优惠链接：**[https://s.ospace.top/9tz](https://s.ospace.top/9tzyrx)
+
+* **5、Airalo 全球 eSIM：**
+<https://airalo.pxf.io/xiaobu15>（新用户优惠码 **XIAOBU15**，15% 折扣）
+全球190+国家，按需购买不限月租，支持支付宝，扫码即激活，适合短期出行或临时需要海外网络的场景，和 Eskimo 的长期保号定位互补。

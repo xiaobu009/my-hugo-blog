@@ -126,5 +126,9 @@ ReadteaGO链接: [https://esim.redteago.com/?c=i5oq82b3](https://esim.redteago.c
 ReadteaGO优惠码（5% 折扣）：**RTGF8F49L**
 
 **5、域名注册Namesilo：**[https://www.namesilo.com](https://www.namesilo.com/?rid=f5e9423mw) ****（**oupons优惠码**：**092368xb** ）<br>
-6、**SMS-Activate优惠链接**：[https://s.ospace.top/9tzyrx](https://s.ospace.top/9tzyrx)<br>
-7、**Elevenlabs AI生成语音**：[https://try.elevenlabs.io/6xlgbhoqxkc8](https://try.elevenlabs.io/6xlgbhoqxkc8)
+6、**Elevenlabs AI生成语音**：[https://try.elevenlabs.io/6xlgbhoqxkc8](https://try.elevenlabs.io/6xlgbhoqxkc8)
+
+**7、没有甲骨文免费额度？（Vultr）**：
+<https://www.vultr.com/?ref=9905832>
+新用户注册送 $300 试用额度，最低 $2.5/月起，全球多个数据中心可选。
+甲骨文云免费层经常一机难求或被回收，Vultr 是更稳定的备选付费方案，几块钱一个月，配置教程和甲骨文大同小异。

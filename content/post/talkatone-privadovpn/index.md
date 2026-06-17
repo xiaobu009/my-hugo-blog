@@ -266,6 +266,4 @@ ReadteaGO优惠码（**5% 折扣**）：RTGF8F49L
 
 **5、域名注册Namesilo**：[https://www.namesilo.com/](https://www.namesilo.com/) （Coupons优惠码：**092368xb**）
 
-**6、SMS-Activate**优惠链接：[https://s.ospace.top/9tzyrx](https://s.ospace.top/9tzyrx)
-
-**7、Elevenlabs AI生成语音**：[https://try.elevenlabs.io/6xlgbhoqxkc8](https://try.elevenlabs.io/6xlgbhoqxkc8)
+**6、Elevenlabs AI生成语音**：[https://try.elevenlabs.io/6xlgbhoqxkc8](https://try.elevenlabs.io/6xlgbhoqxkc8)

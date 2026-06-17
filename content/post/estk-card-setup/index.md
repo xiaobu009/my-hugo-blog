@@ -165,12 +165,12 @@ Eskimo邀请码**：BD995**
 
 **1、自用机场Mitce：**<br>[https://s.ospace.top/3tps6w](https://s.ospace.top/3tps6w) **9折优惠码**：（ **S4E6U9** ）<br>
 100GB/0.60美金/月、500GB/1.2美金/月、1000GB/2美金/月，不计量套餐/3美金，四款套餐可选。包含住宅IP链路，支持Windows、Android、macOS、iOS/iPadOS、Router多种客户端。
-* **2、Eskimo流量卡：**<br>
+**2、Eskimo流量卡：**<br>
 [https://s.ospace.top/mw9qyz](https://s.ospace.top/mw9qyz) **邀请码：BD995** <br>
 得500MB两年有效期的免费全球数据流量。
 Eskimo是流量卡不含号码，支持80多个国家/地区漫游，从第一次激活使用流量开始计算，长达2年有效期，并且非免费赠送流量可转送到其它Eskimo账户。
 购买中国区域流量或全球流量，如果在中国使用走的是新加坡网络链路，获取的是新加坡的住宅IP，非常适合申请国外应用及保号。
-* **3、ReadteaGO流量卡:**<br>
+**3、ReadteaGO流量卡:**<br>
 ReadteaGO链接: [https://esim.redteago.com/?c=i5oq82b3](https://esim.redteago.com/?c=i5oq82b3)<br>
 ReadteaGO优惠码（**5% 折扣**）：**RTGF8F49L** 含真实手机号，可接收验证码，适合需要注册海外应用的用户。
-* **4、域名注册Namesilo：**[https://www.namesilo.com/](https://www.namesilo.com/)  （**Coupons优惠码：092368xb**）
+**4、域名注册Namesilo：**[https://www.namesilo.com/](https://www.namesilo.com/)  （**Coupons优惠码：092368xb**）

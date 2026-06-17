@@ -241,8 +241,7 @@ Cloudflare 开始构建，通常需要 1-3 分钟。页面会实时显示构建�
 
 接下来把你自己的域名绑定上去。
 
-> **还没有域名？**
-> 推荐去 [Spaceship](https://www.spaceship.com) 或 [Namesilo](https://www.namesilo.com) 注册，价格实惠，操作简单。
+> **还没有域名？** 推荐用 [Namesilo 域名搜索页](https://www.namesilo.com/domain/search-domains?rid=f5e9423mw) 直接查价格注册，用优惠码 `092368xb` 还能再省一点。
 
 ### 情况一：域名在 Cloudflare 管理
 
