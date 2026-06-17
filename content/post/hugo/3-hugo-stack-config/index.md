@@ -312,4 +312,3 @@ url: "hugo-stack-config"
 ---
 ```
 
-完整访问地址：https://smallstep.one/hugo-stack-config/
