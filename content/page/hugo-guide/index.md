@@ -144,7 +144,7 @@ Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数�
 |---------|-----------|
 | 完全没用过 Hugo，想从头搭建 | [初级01：本地环境搭建](/hugo-local-setup/) |
 | 本地已跑通，需要上线 | [初级02：Cloudflare Pages 部署](/hugo-cloudflare-deploy/) |
-| 网站已上线，想配置头像和社交链接 | 中级01（即将发布）|
+| 网站已上线，想配置头像和社交链接 | [中级01：Stack 主题个性化配置指南](/hugo-stack-config/) |
 | 想让网站好看一点 | 中级03（即将发布）|
 | 想接入 Google 统计和 AdSense | 中级04（即将发布）|
 | 想被搜索引擎更好收录 | 中级05（即将发布）|
