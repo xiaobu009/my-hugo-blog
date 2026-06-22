@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-date: 2026-06-18
+date: 2022-06-18
 description: Privacy Policy
 url: "privacy-policy-en"
 tags:

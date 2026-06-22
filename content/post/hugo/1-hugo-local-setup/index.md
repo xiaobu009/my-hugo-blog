@@ -6,7 +6,7 @@ draft: false
 description: "从零开始，一步一步在本地搭建 Hugo 博客并运行 Stack 4.0 主题，做完这篇你就能在浏览器里看到自己的博客。"
 keywords: ["Hugo", "Stack主题", "个人博客", "Hugo教程", "建站"]
 categories:
-    - Hugo建站指南
+    - Hugo建站
 tags:
     - Hugo
     - Stack主题
@@ -478,6 +478,6 @@ A：确认你现在在 `myblog` 目录里，并且第五步的 git clone 已经�
 
 本地博客跑起来了，接下来要把它发布到互联网上，让任何人都能通过域名访问。
 
-**下一篇：[免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy)**
+下一篇：[免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy)
 
 涵盖：GitHub 仓库创建、代码推送、Cloudflare Pages v

@@ -1,5 +1,5 @@
 ---
-title: "让博客更像你的：Stack 主题个性化配置指南"
+title: "中级01-让博客更像你的：Stack 主题个性化配置指南"
 date: 2026-06-09
 lastmod: 2026-06-09
 draft: false
@@ -7,7 +7,7 @@ description: "博客上线了，但还是默认样子？这篇手把手教你配
 keywords: ["Hugo", "Stack主题", "个性化配置", "头像设置", "导航菜单", "侧边栏"]
 image: images/hugo-stack-config-Thumbnail-3.webp
 categories:
-  - Hugo建站指南
+  - Hugo建站
 tags:
   - Hugo
   - Stack主题
@@ -284,9 +284,9 @@ A：检查最后一行末尾是否多了逗号，删掉即可。
 
 ## 系列导航
 
-- 上一篇：[初级02——免费把博客发布到全球：GitHub + Cloudflare Pages 部署完整指南](https://smallstep.one/hugo-cloudflare-deploy/)
-- 下一篇：中级02——写作体验优化：Front Matter、文章模板与封面图规范（即将发布）
-- 返回系列目录：[Hugo 建站完全指南](https://smallstep.one/hugo-guide/)
+- 上一篇：[初级02——免费把博客发布到全球：GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy)
+- 下一篇：[中级02-写作体验优化：Front Matter、文章模板与内容目录改名](/hugo-frontmatter-cover-image)
+- 返回系列目录：[Hugo 建站完全指南](/hugo-guide)
 
 ---
 

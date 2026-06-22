@@ -6,7 +6,7 @@ draft: false
 description: "手把手带你把本地 Hugo 博客推送到 GitHub，再通过 Cloudflare Pages 自动部署上线，按照步骤一步步做完，你就拥有了一个真实可访问的个人博客。"
 keywords: ["Hugo", "Cloudflare Pages", "GitHub", "部署", "建站"]
 categories:
-    - Hugo建站指南
+    - Hugo建站
 tags:
     - Hugo
     - Cloudflare
@@ -393,5 +393,6 @@ A：在 Cloudflare Pages 的项目设置里找到 **Environment variables**，�
 - 调整主题配色和字体，让博客更有个人风格
 - 接入 Google Search Console，了解哪些文章流量最高
 ---
-- **上一篇：[零基础搭建个人博客——Hugo + Stack 4.0 本地环境完整指南](/hugo-local-setup)**
-- **下一篇：中级01——让博客更像你的：Stack 主题个性化配置指南**（即将发布）
+- 上一篇：[初级01-零基础搭建个人博客——Hugo + Stack 4.0 本地环境完整指南](/hugo-local-setup)
+- 下一篇：[中级01——让博客更像你的：Stack 主题个性化配置指南](/hugo-stack-config)
+- 返回系列目录：[Hugo 建站完全指南](/hugo-guide)
