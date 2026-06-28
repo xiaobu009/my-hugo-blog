@@ -5,6 +5,7 @@ lastmod: 2026-06-12
 draft: false
 description: "每次写新文章都要手敲一遍 Front Matter？封面图在首页和归档页显示得不一样大？这篇解决这两个真实存在的麻烦，做完这篇写文章会顺手很多。"
 keywords: ["Hugo", "Stack主题", "Archetype", "文章模板", "封面图", "Page Bundle", "imageProcessing"]
+image: images/hugo-frontmatter-cover-image-Thumbnail.webp
 categories:
   - Hugo建站
 tags:
@@ -15,12 +16,13 @@ series_order: 4
 url: "hugo-frontmatter-cover-image"
 ---
 
+{{< youtube BBN2_Ji_10Q >}}
 
 ---
 
 ## 做完这篇你能得到什么
 
-新建文章时，常用的 Front Matter 字段自动帮你填好，不用每次从零手敲，也不用现场回忆该填哪些字段。封面图放哪、`image` 字段怎么写不用再纠结，而且不管在首页列表、归档页还是相关文章推荐里，显示的裁切比例都统一好看，不会一个被拉伸一个被裁歪。
+新建文章时，常用的 Front Matter 字段自动帮你填好，不用每次从零手敲，也不用现场回忆该填哪些字段。封面图放哪、`image` 字段怎么写不用再纠结。如果你也想把默认的 `post` 目录改成更常见的 `posts`，这篇也会说清楚哪些地方要一起改，不然首页文章列表会直接消失。
 
 **前提：已完成中级01，博客的头像、签名、社交链接、导航菜单都配置完了。**
 
@@ -130,9 +132,10 @@ series_order:
 ---
 ```
 
-大部分字段顾名思义，挑几个容易搞混的说一下：
+大部分字段顾名思义不多解释了，挑几个容易搞混的说一下：
 
-- **`description`**：Stack主题中通常显示在标题的下方，它不仅可以吸引阅读者的目光，也是给搜索引擎和分享卡片看的摘要，虽然它不会直接提高你的排名，但会极大影响用户的**点击率 (CTR)**。
+- **draft **，表示这篇文章是否为草稿，true 代表真，false代表假，为真时服务器不生成该页面，用户看不到。所以发布前需设置为假 false。
+- **`description`**：是文章摘要介绍，Stack主题中显示在标题的下方，它不仅可以吸引阅读者的目光，也是给搜索引擎和分享卡片看的摘要，虽然它不会直接提高你的排名，但会极大影响用户的**点击率 (CTR)**。
 - **`url`**：Hugo中（`url: 与 /p/:slug/`）是定义页面最终访问地址的两种不同方式。也是最常见的两种方式。`/p/:slug/` 通常是在网站的全局配置文件中设置（比如 config.toml 或 hugo.yaml 文件），全局生效。/p/ 是个可自定义的前缀，可以是任意的英文字母，:slug 是一个变量，通常对应文章 Front Matter 里的 **slug** 字段。而 **`url`** 直接在页面的 **`Front Matter`** 中设置，且仅对当前文章生效。如果两项都设置了，url  优先级最高首先被调用。简单来说：**url 是“强制性手动指定”，而 /p/:slug/ 是“自动化规则”**
 - **`keywords`**：纯粹给 SEO 用的，跟正文里出不出现这些词没关系，但建议跟标题、描述里的词呼应一下。
 
@@ -177,19 +180,19 @@ series_order:
 
 ---
 
-## 第二步：让新建文章自动带出这些字段
+## 第二步：创建带Front Matter的模板文件
 
-每次手动敲 Front Matter 太容易漏字段，这一步用 Hugo 的 Archetype 机制，把第一步那些重复劳动省掉。archetypes/ 是 Hugo 中用来“快速新建文章”的模板系统。简单来说：archetypes 的作用就是：**当你执行 hugo new 命令创建新文章时，自动帮你生成带有预设 Front Matter 的 Markdown 文件**。
+**archetypes** 是 Hugo 里用来 "**快速新建文章**" 的模板系统。简单说，就是当你执行 `hugo new` 命令，创建新文章时，archetypes 模板自动帮你生成，带有预设 Front Matter 的 Markdown 文件。
 
+还记得最初我们通过hugo new 命令创建的那个文件吗？打开它会看到 Front Matter 中已经存在了三行代码。其实这就是通过archetypes下的 default 模板实现的。
 
+**在哪改：** **archetypes模板文件**默认放在站点根目录的 `archetypes` 文件夹下，**模板文件名对应文章类型**，文章类型也可理解为文件夹名。比如我们的文章放在 `content/post`目录下，对应的模板文件就是 `archetypes/post.md`。简单来说，**archetypes下的模板名字，就是content 目录下一级文件夹的名字**
 
-**在哪改：** Archetype 模板文件放在站点根目录的 `archetypes/` 文件夹下，文件名对应文章类型。我们的文章放在 `content/post/`，对应的模板文件就是 `archetypes/post.md`。
-
-这里有个容易踩的坑——Hugo 找模板文件是按内容所在的 section 来匹配的，会**优先找 `archetypes/post.md`**，找不到才退回去用 `archetypes/default.md`。如果只改 `default.md`，以后给「关于」「友链」这类固定页面新建内容时，也会被文章专属字段污染。
+这里有个容易踩的坑——Hugo调用模板文件，是按content 目录下，一级文件夹名来匹配的，比如 hugo new 命令后面跟的是posts，Hugo会优先找 `archetypes/posts.md`，找不到才退回去用 `archetypes/default.md`。所以创建archetypes模板时要注意这个对应关系。
 
 **怎么做：**
 
-打开 `myblog/archetypes/` 目录，新建（或修改已有的）`post.md`：
+打开 `myblog/archetypes/` 目录，新建（或修改已有的）`posts.md`：
 
 ```yaml
 ---
@@ -220,56 +223,89 @@ image: ""
 以后新建文章不再手动建文件，改用命令：
 
 ```bash
-hugo new post/我的新文章.md
+hugo new posts/xxx.md
 ```
 
-打开生成的文件，`title`、`date`、`lastmod`、`draft` 已经自动填好，`categories`、`tags` 也带出了你常用的默认值，只需要按这篇文章的实际情况改 `series`、`url`、`image` 和正文内容。
-
-> **验证：** 运行 `hugo new post/test-archetype.md`，打开 `content/post/test-archetype.md`，确认 Front Matter 已经按模板自动填好。确认没问题后把这个测试文件删掉。
+> **验证：** 运行 `hugo new posts/test-archetype.md`，打开 `content/posts/test-archetype.md`，看到`title`、`date`、`lastmod`、`draft` 已经自动填好，`categories`、`tags` 也带出了你常用的默认值，剩下的，只需要按实际情况修改改 `series`、`url`、`image` 和正文内容即可。
 
 > **如果系列文章需要 `series` 和 `series_order`？** 不是每篇都用得上，可以不写进 archetype 里，写系列文章时手动加这两行就够了。
 
 ---
 
-## 第三步：封面图配置规范——用 Page Bundle 彻底解决路径混乱
+## 第三步：Hugo中怎么有效的组织文件
 
-封面图设置好之后，经常出现这种情况——同一张图，在首页列表显示得刚好，点进归档页却变形拉伸，或者在文末「相关文章」推荐里被裁得只剩一半。这一步先解决路径放哪、`image` 字段怎么填的问题，下一步再解决显示不统一的问题。
+很多朋友给文章配图的时候，都会犹豫——图片到底该放 `assets` 还是 `static`？正文里的图片路径应该怎么写？而且经常会因路径写错，图片显示不出来。其实这是由于，图片散落在不同目录里，路径关系全靠手动维护造成的。
 
-**还是初级阶段反复提到的那个老问题：`assets/` 和 `static/` 分不清。** 这一步给一个能彻底绕开这个问题的做法。
+那怎么解决呢？这个方法就是使用**Page Bundle**，它是Hugo 官方推荐的文件组织方式 。
 
-**推荐做法：用 Page Bundle（文章打包成文件夹）**
+**Page Bundle（也叫页面捆绑包）** ：**就是把一篇文章（.md 文件）和它相关的所有资源文件（如封面图、图片、内嵌图片等）放在同一个文件夹里**。
 
-不要把封面图单独丢进 `assets/img/` 或 `static/img/` 然后在 Front Matter 里写一长串路径——这是最容易记混的方式。更省心的做法是把文章变成一个「文件夹」，图片和文章正文放在一起：
+这样 Hugo 会自动把这个文件夹识别为“一整篇文章”，资源和文章内容紧密绑定，不需要再写复杂的相对路径或纠结 assets / static 的问题。
+
+### 简单结构示例
+
+text
 
 ```
-content/post/我的文章/
-├── index.md       ← 文章正文
-└── cover.jpg       ← 封面图，跟正文同一个文件夹
+content/
+└── posts/
+    └── my-first-post/          ← 这就是一个 Page Bundle 文件夹
+        ├── index.md            ← 文章正文（必须叫这个名字）
+        ├── cover.jpg           ← 封面图
+        ├── image-1.jpg         ← 文章内使用的图片
+        └── image-2.png
 ```
 
-这种结构在 Hugo 里叫 **Page Bundle（页面包）**，好处是图片和文章绑在一起，**不用再纠结放 assets 还是 static**，Hugo 会自动处理同目录下的图片资源。这样做整理或迁移时会方便很多，直接复制文件夹就好。
+### 如何使用（最简单步骤）
 
-Front Matter 里 `image` 字段直接写文件名，不用写路径：
+1. **新建 Page Bundle**
 
-```yaml
-image: "cover.jpg"
-```
+   - 在 content/post/（或其他分类目录）下新建一个**文件夹**（文件夹名建议用英文、短横线混合定义，如 my-first-post）。
+   - 在文件夹里新建 index.md 文件，把文章内容写进去。
 
-**如果文章已经是单文件形式，改成 Page Bundle 很简单：**
+2. **放图片**
 
-```bash
-# Windows
-mkdir content\post\我的文章
-move content\post\我的文章.md content\post\我的文章\index.md
+   - 直接把封面图和其他图片**拖进这个文件夹**，和 index.md 放在同一层级。
 
-# Mac
-mkdir content/post/我的文章
-mv content/post/我的文章.md content/post/我的文章/index.md
-```
+3. **Front Matter 中引用**
 
-然后把封面图直接拖进这个文件夹，跟 `index.md` 平级。
+   YAML
+   ```yaml
+   ---
+   title: 我的文章标题
+   date: 2026-06-01
+   image: "cover.jpg"     # ← 只需要写文件名，不用写路径！
+   ---
+   ```
+4. **在文章正文中引用图片**
 
-**尺寸建议：**
+   Markdown
+
+   ```markdown
+   ![图片描述](test-pic.webp)      ← 这里是Stack主题下的写法
+   ```
+   
+   Hugo 会自动在同文件夹里查找对应的图片文件。
+
+### 从单文件转换成 Page Bundle（最常用操作）
+
+如果想将已有的单个文件，转换为Page Bundle 结构，按照下面步骤操作即可。
+
+1. 新建一个文件夹（比如 my-post）。
+2. 把原来的 my-post.md 改名为 index.md 放进文件夹。
+3. 把封面图也放进同一个文件夹。
+4. 更新 Front Matter 中的 image 字段，只保留文件名即可，这样就完成了转换。
+
+**一句话总结**： **Page Bundle = 把文章和它的图片打包成一个文件夹，Hugo 自动认领，同级目录下直接用文件名引用**。简单、省心、不容易出错，是 Hugo 中长期维护内容的推荐做法。
+
+### 优点（为什么推荐）
+
+- **路径简单**：永远不用写 ../../static/img/xxx.jpg 这种容易出错的长路径。
+- **迁移方便**：整个文章文件夹复制粘贴就走，图片不会丢。
+- **显示稳定**：封面图在首页、归档页、文章页等地方引用更可靠。
+- **符合 Hugo 官方推荐**，功能支持最完整。
+
+### 尺寸建议：
 
 准备 1200×630px 左右、16:9 或接近的横向图片，太窄或太方的图在首页卡片里会被裁掉关键内容。文件大小尽量控制在 500KB 以内，太大会拖慢首屏加载。
 
@@ -277,7 +313,9 @@ mv content/post/我的文章.md content/post/我的文章/index.md
 
 ---
 
-## 第四步：把文章目录从 post 改成 posts（可选，但要改就要改全）
+## 第四步：把文章目录从 post 改成 posts
+
+**这一步可选，但要改就全改**
 
 Stack 4.0 demo 默认用的文章目录名是 `post`（单数），但更常见的习惯是用 `posts`（复数）。这一步不是必须做的，但如果你也想改名字，这里把所有要同步调整的地方一次说清楚——这是真实踩过的坑，只改目录名不改配置，首页文章列表会直接消失。
 
@@ -360,7 +398,7 @@ A：图片放进了 Page Bundle 文件夹，但正文 Markdown 里引用路径�
 ## 系列导航
 
 - 上一篇：[中级01——让博客更像你的：Stack 主题个性化配置指南](/hugo-stack-config)
-- 下一篇：中级03——主题视觉定制：custom.scss 覆盖样式、主题色、暗色模式（即将发布）
+- 下一篇：[中级03——主题视觉定制：custom.scss 覆盖样式、主题色、暗色模式](/hugo-stack-custom-style)
 - 返回系列目录：[Hugo 建站完全指南](/hugo-guide)
 
 ---

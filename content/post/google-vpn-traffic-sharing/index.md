@@ -53,7 +53,7 @@ tags:
 ### 2、Every Proxy工具说明
 
 **Every Proxy**提供了两种代理方式，一是**Http代理**，二是**Socks代理**，使用时可开启其中任意一个或全部开启均可。
-**Http Proxy 包含3个或4个IP地址**和一个端口。同样**Socks Proxy**代理中也**包含相同的IP地址**，**唯一的区别是端口不同**，**Http Proxy中是8080端口**，**Socks Proxy中是1080端口**。端口可以修改但通常并不需要，保持默认即可，要想修改可点编辑图标进入即可修改。这
+**Http Proxy 包含3个或4个IP地址**和一个端口。同样**Socks Proxy**代理中也**包含相同的IP地址**，**唯一的区别是端口不同**，**Http Proxy中是8080端口**，**Socks Proxy中是1080端口**。端口可以修改但通常并不需要，保持默认即可，要想修改可点编辑图标进入即可修改。
 
 ![Http+Socks Proxy](v-011.webp)![Http Proxy 地址](v-012.webp)![Socks Proxy地址](v-013.webp)![修改端口](v-014.webp)
 
