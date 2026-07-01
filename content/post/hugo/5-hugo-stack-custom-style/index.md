@@ -5,6 +5,7 @@ lastmod: 2026-06-23
 draft: false
 description: "用 custom.scss 安全地改 Stack 主题的颜色、圆角和暗色模式配色，不碰主题源码，以后主题升级也不会把改动冲掉。"
 keywords: ["Hugo", "Stack主题", "custom.scss", "暗色模式", "主题色", "建站"]
+image: images/hugo-stack-custom-style-Thumbnail-1.webp
 categories:
   - Hugo建站
 tags:
@@ -34,7 +35,7 @@ Hugo 有个机制：**站点根目录下的文件，优先级永远高于主题�
 
 ------
 
-## 建好你的专属样式文件
+## 创建自己的专属样式文件
 
 打开你的 `myblog` 文件夹，检查一下有没有这个路径：
 
@@ -58,7 +59,7 @@ myblog/assets/scss/custom.scss
 
 ## 换一个你喜欢的主题色
 
-Stack 的颜色（包括圆角、间距）全部用 **CSS 变量** 控制，不是直接写死某个颜色值——好处是一个变量改一次，全站用到这个颜色的地方全部跟着变，不用一个个文件去找。
+Stack 主题的颜色（包括圆角、间距）全部用 **CSS 变量** 控制，不是直接写死某个颜色值——好处是一个变量改一次，全站用到这个颜色的地方全部跟着变，不用一个个文件去找。
 
 影响最大的一个变量是 `--accent-color`，控制的是链接颜色、标题左侧的色条、文章目录里当前高亮的项目、锚点图标这些"强调"元素：
 
@@ -174,7 +175,7 @@ Stack 的颜色（包括圆角、间距）全部用 **CSS 变量** 控制，不�
 
 ## `colorScheme` 开关是另一码事，别和颜色搞混
 
-`config/_default/params.toml` 里有一段 `[colorScheme]`：
+`themes/hugo-theme-stack/config/_default/params.toml ` 里有一段配置 `[colorScheme]`：
 
 ```toml
 [colorScheme]
