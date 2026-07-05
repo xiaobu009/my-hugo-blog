@@ -16,6 +16,7 @@ series: ["Hugo建站指南"]
 series_order: 5
 ---
 
+{{< youtube yk0ay1VRLZ4 >}}
 
 ## 做完这篇你能得到什么
 
