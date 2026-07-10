@@ -5,6 +5,7 @@ lastmod: 2026-07-01
 draft: false
 description: "用最少的步骤把 Google Analytics 4、Search Console、AdSense 这三个工具的角色和起步方式说清楚，让你知道博客上线之后下一步该做什么。"
 keywords: ["Hugo", "Google Analytics", "GA4", "Search Console", "AdSense", "博客变现", "SEO"]
+image: images/hugo-analytics-adsense-basics-thumbnail-1.webp
 categories:
   - Hugo建站
 tags:
@@ -49,7 +50,7 @@ Stack 主题原生支持 GA4，不用手动改任何模板文件——主题刚�
 ```toml
 [services]
   [services.googleAnalytics]
-    googleAnalytics = 'G-XXXXXXXXXX'
+    id = 'G-XXXXXXXXXX'
 ```
 
 把 `G-XXXXXXXXXX` 换成你自己的测量 ID，保存。
