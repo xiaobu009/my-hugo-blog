@@ -68,7 +68,10 @@ menu:
 
 把本地 Hugo 站推送到 GitHub，通过 Cloudflare Pages 实现 `git push` 自动全球部署，绑定自定义域名。
 
+👉 [免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](https://smallstep.one/hugo-cloudflare-deploy/)
+
 **本篇重点：**
+
 - `.git` 子模块天坑（新手最高频的部署失败原因）
 - `HUGO_VERSION` 为什么必须手动设置
 - 自定义域名绑定（Cloudflare 域名 vs 其他平台两种情况）
@@ -114,9 +117,11 @@ Front Matter 字段说明、文章模板设置、内容目录改名，让写文�
 
 ---
 
-### 📄 中级04｜流量与变现基础（即将发布）
+### 📄 中级04｜流量与变现基础
 
 Google Analytics 接入、Google Search Console 配置、AdSense 申请条件与植入方式。网站上线后让它被统计、被找到、能赚钱。
+
+👉 [流量与变现基础——Google Analytics、Search Console、AdSense 起步指南](https://smallstep.one/hugo-analytics-adsense-basics/)
 
 ---
 
@@ -151,15 +156,15 @@ Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数�
 
 | 我的情况 | 从这里开始 |
 |---------|-----------|
-| 完全没用过 Hugo，想从头搭建 | [初级01：本地环境搭建](/hugo-local-setup/) |
-| 本地已跑通，需要上线 | [初级02：Cloudflare Pages 部署](/hugo-cloudflare-deploy/) |
-| 网站已上线，想配置头像和社交链接 | [中级01：Stack 主题个性化配置指南](/hugo-stack-config/) |
-| Front Matter，模板设置、目录改名 | [中级02：写作体验优化](/hugo-frontmatter-cover-image/) |
-| 想让网站好看一点 | [中级03 主题视觉定制](/hugo-stack-custom-style/)|
-| 想接入 Google 统计和 AdSense | 中级04（即将发布）|
-| 想被搜索引擎更好收录 | 中级05（即将发布）|
-| 评论系统接入 | 中级06（即将发布）|
-| 多语言配置 + 站内搜索优化 | 中级07（即将发布）|
+| 完全没用过 Hugo，想从头搭建 | 初级01：[本地环境搭建](/hugo-local-setup/) |
+| 本地已跑通，需要上线 | 初级02：[Cloudflare Pages 部署](/hugo-cloudflare-deploy/) |
+| 网站已上线，想配置头像和社交链接 | 中级01：[Stack 主题个性化配置指南](/hugo-stack-config/) |
+| Front Matter，模板设置、目录改名 | 中级02：[写作体验优化](/hugo-frontmatter-cover-image/) |
+| 想让网站好看一点 | 中级03： [主题视觉定制](/hugo-stack-custom-style/) |
+| 想接入 Google 统计和 AdSense | 中级04： [流量与变现基础](https://smallstep.one/hugo-analytics-adsense-basics/) |
+| 想被搜索引擎更好收录 | 中级05：（即将发布） |
+| 评论系统接入 | 中级06：（即将发布） |
+| 多语言配置 + 站内搜索优化 | 中级07：（即将发布） |
 ---
 
 ## ❓ 常见问题
