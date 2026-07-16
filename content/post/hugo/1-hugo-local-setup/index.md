@@ -478,6 +478,7 @@ A：确认你现在在 `myblog` 目录里，并且第五步的 git clone 已经�
 
 本地博客跑起来了，接下来要把它发布到互联网上，让任何人都能通过域名访问。
 
-下一篇：[免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy)
+- 下一篇：[免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy)
 
-涵盖：GitHub 仓库创建、代码推送、Cloudflare Pages v
+涵盖：GitHub 仓库创建、代码推送、Cloudflare Pages 
+- 返回系列目录：[Hugo 建站指南](/hugo-guide/)

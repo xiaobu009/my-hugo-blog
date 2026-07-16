@@ -1,3 +1,4 @@
+images = ["img/default-bg.webp"]
 mainSections   = ["post"]
 rssFullContent = true
 favicon        = "img/avatar.png"

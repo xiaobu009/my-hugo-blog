@@ -68,7 +68,7 @@ menu:
 
 把本地 Hugo 站推送到 GitHub，通过 Cloudflare Pages 实现 `git push` 自动全球部署，绑定自定义域名。
 
-👉 [免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](https://smallstep.one/hugo-cloudflare-deploy/)
+👉 [免费把博客发布到全球——GitHub + Cloudflare Pages 部署完整指南](/hugo-cloudflare-deploy/)
 
 **本篇重点：**
 

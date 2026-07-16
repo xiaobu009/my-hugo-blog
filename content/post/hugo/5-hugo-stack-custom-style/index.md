@@ -263,7 +263,7 @@ A：把 `custom.scss` 里自己写的内容删掉（或者直接清空整个文�
 博客现在看着顺眼多了，接下来该让更多人看到它了。中级04 会讲怎么接入 Google Analytics、Search Console，让你知道流量从哪来、读者在看哪些文章。
 
 - 上一篇：[写作体验优化——Front Matter、文章模板、封面图规范](/hugo-frontmatter-cover-image/)
-- 下一篇：流量与变现基础——Google Analytics、Search Console、AdSense（即将发布）
+- 下一篇：[流量与变现基础——Google Analytics、Search Console、AdSense](/hugo-analytics-adsense-basics)
 - 返回系列目录：[Hugo 建站指南](/hugo-guide/)
 
 ------

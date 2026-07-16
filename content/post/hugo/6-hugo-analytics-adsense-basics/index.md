@@ -163,6 +163,6 @@ A：大概率是 `ads.txt` 没放对位置，或者放了但还没等 Cloudflare
 
 ## 系列导航
 
-- 上一篇：中级03——主题视觉定制（即将发布）
-- 下一篇：中级05——SEO 进阶（即将发布）
-- [返回系列目录](https://smallstep.one/hugo-guide/)
+- 上一篇：[中级03——主题视觉定制](/hugo-stack-custom-style)
+- 下一篇：[中级05——SEO 进阶](/hugo-seo-advanced)
+- 返回系列目录：[Hugo 建站指南](/hugo-guide/)

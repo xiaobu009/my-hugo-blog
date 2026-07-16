@@ -11,7 +11,6 @@ categories:
 tags:
   - Hugo
   - Stack主题
-  - 个性化配置
 series: ["Hugo建站指南"]
 series_order: 3
 url: "hugo-stack-config"
