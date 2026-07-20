@@ -4,4 +4,13 @@
     url        = "https://www.youtube.com/@OneSmallStepMe"
 
     [social.params]
-        icon = "brand-youtube-2"
+        icon = "brand-youtube"
+
+
+[[social]]
+    identifier = "email"
+    name       = "联系我：contact@smallstep.one"
+    url        = "mailto:contact@smallstep.one"
+
+    [social.params]
+        icon = "mail"

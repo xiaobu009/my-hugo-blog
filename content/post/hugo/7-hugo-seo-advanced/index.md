@@ -1,5 +1,5 @@
 ---
-title: "SEO 进阶——让 Google 和社交平台真正「看懂」你的博客"
+title: "中级05-SEO 进阶——让 Google 和社交平台真正「看懂」你的博客"
 date: 2026-07-10
 lastmod: 2026-07-10
 draft: false

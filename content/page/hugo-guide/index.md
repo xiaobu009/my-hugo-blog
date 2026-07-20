@@ -128,6 +128,7 @@ Google Analytics 接入、Google Search Console 配置、AdSense 申请条件与
 ### 📄 中级05｜SEO 进阶（即将发布）
 
 Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数据。让搜索引擎更好地收录你的内容。
+👉 [SEO 进阶——让 Google 和社交平台真正「看懂」你的博客](/hugo-seo-advanced/)
 
 ---
 
@@ -162,7 +163,7 @@ Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数�
 | Front Matter，模板设置、目录改名 | 中级02：[写作体验优化](/hugo-frontmatter-cover-image/) |
 | 想让网站好看一点 | 中级03： [主题视觉定制](/hugo-stack-custom-style/) |
 | 想接入 Google 统计和 AdSense | 中级04： [流量与变现基础](https://smallstep.one/hugo-analytics-adsense-basics/) |
-| 想被搜索引擎更好收录 | 中级05：（即将发布） |
+| 想被搜索引擎更好收录 | 中级05：[SEO 进阶](/hugo-seo-advanced/) |
 | 评论系统接入 | 中级06：（即将发布） |
 | 多语言配置 + 站内搜索优化 | 中级07：（即将发布） |
 ---
@@ -185,7 +186,7 @@ A：本系列基于 Stack 4.0（配合 Hugo v0.158.0）编写，`lastmod` 字段
 
 ## 💬 遇到问题？
 
-- 每篇文章底部评论区，直接留言
+- 发邮件：contact@smallstep.one
 - YouTube 视频评论区（每篇文章对应一期视频）
 - 👉 [YouTube @OneSmallStepMe](https://www.youtube.com/@OneSmallStepMe)
 
