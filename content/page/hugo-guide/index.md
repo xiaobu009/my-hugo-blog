@@ -134,13 +134,7 @@ Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数�
 
 ### 📄 中级06｜评论系统接入（即将发布）
 
-评论系统接入（Giscus / Disqus）。
-
----
-
-### 📄 中级07｜功能扩展（即将发布）
-
-多语言基础配置、搜索功能优化。
+👉[评论系统接入（Giscus / Disqus）](/hugo-stack-giscus-comments/)
 
 ---
 
@@ -164,8 +158,8 @@ Sitemap 配置、robots.txt 自定义、Open Graph 标签验证、结构化数�
 | 想让网站好看一点 | 中级03： [主题视觉定制](/hugo-stack-custom-style/) |
 | 想接入 Google 统计和 AdSense | 中级04： [流量与变现基础](https://smallstep.one/hugo-analytics-adsense-basics/) |
 | 想被搜索引擎更好收录 | 中级05：[SEO 进阶](/hugo-seo-advanced/) |
-| 评论系统接入 | 中级06：（即将发布） |
-| 多语言配置 + 站内搜索优化 | 中级07：（即将发布） |
+| 评论系统接入 | [中级06：评论系统接入](/hugo-stack-giscus-comments/) |
+
 ---
 
 ## ❓ 常见问题
