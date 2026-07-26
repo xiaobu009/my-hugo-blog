@@ -224,5 +224,4 @@ A：去 giscus.app 挑别的主题样式名填进 `lightTheme` / `darkTheme`，�
 
 **系列导航：**
 - 上一篇：[SEO 进阶——让 Google 和社交平台真正"看懂"你的博客](/hugo-seo-advanced/)
-- 下一篇：中级07——多语言配置与站内搜索优化（即将发布）
 - 返回系列目录：[Hugo建站指南总目录](/hugo-guide/)

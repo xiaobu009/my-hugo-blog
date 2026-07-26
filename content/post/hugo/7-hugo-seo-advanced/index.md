@@ -35,9 +35,29 @@ Hugo 默认是**不**生成 robots.txt 文件的，需要手动开启。打开 `
 enableRobotsTXT = true
 ```
 
-只加这一行，Hugo 会用内置的默认模板生成一份最基础的 `robots.txt`（基本等于"对谁都不设限"）。如果你只是想让搜索引擎正常抓取，到这一步其实就够了。
+保存，推送到 GitHub：
 
-但如果你不想让自己写的内容被各家公司拿去训练 AI 模型，可以自己写一份更细的规则。在站点根目录（和 `content/` 同级）新建 `layouts/robots.txt`：
+```
+git add .
+git commit -m "开启 robots.txt"
+git push
+```
+
+等 Cloudflare 重新构建完成后，打开浏览器访问你的域名 + `/robots.txt`，比如：
+
+```
+https://smallstep.one/robots.txt
+```
+
+**如果你用的是 Cloudflare Pages 部署（按这个系列教程做下来都是这种情况），到这里就完成了。** Cloudflare 会在这个基础上自动叠加一套完整的 AI 训练爬虫屏蔽规则，包括 GPTBot、ClaudeBot、Google-Extended、Bytespider、CCBot、Applebot-Extended、Amazonbot、meta-externalagent 等，覆盖范围比手动维护还要全面，不需要再创建 `layouts/robots.txt` 文件——创建了反而会把 Cloudflare 这份更完整的规则覆盖掉。
+
+> **注意区分清楚：** `Google-Extended` 只控制 Google 是否拿你的内容去训练 Gemini 之类的 AI 模型，跟负责把你的网站收进搜索结果的 `Googlebot` 是两个完全不同的爬虫，屏蔽前者**不会**影响你网站在 Google 搜索里的正常收录。这两个名字长得太像，很容易搞混。
+
+> **另外提一句：** Hugo 会给每个标签、分类自动生成一个列表页，如果某个标签下只有一两篇文章，这种页面内容很薄，Google 可能会判定为低质量页面。现在文章数量还少，不用特别处理；等内容多起来、个别标签页常年只有一篇文章时，可以在 Cloudflare Pages 后台的 robots.txt 管理界面里补充规则，把 `/tags/` 这类路径排除掉。
+
+------
+
+如果想屏蔽更多的爬虫，可以在站点根目录创建自己的robots.txt 文件（ `layouts/robots.txt`），然后把规则添加进去。
 
 ```
 User-agent: *
@@ -67,23 +87,9 @@ User-agent: Applebot-Extended
 Disallow: /
 ```
 
-> **注意区分清楚：** `Google-Extended` 只控制 Google 是否拿你的内容去训练 Gemini 之类的 AI 模型，跟负责把你的网站收进搜索结果的 `Googlebot` 是两个完全不同的爬虫，屏蔽前者**不会**影响你网站在 Google 搜索里的正常收录。这两个名字长得太像，很容易搞混，屏蔽前确认一下名字。
-
 这份文件用到了 Hugo 的模板语法（`{{ .Site.BaseURL }}`），构建时会被替换成你真实的网址，所以文件名后缀还是 `.txt`，内容里可以放模板代码。
 
 本地运行 `hugo server -D`，打开浏览器访问 `http://localhost:1313/robots.txt`，确认内容跟你写的一致——尤其检查最上面的 `User-agent: *` 下面是不是 `Allow: /` 而不是 `Disallow: /`，这个写反是最容易出的事故，一旦写反等于告诉全世界的搜索引擎别来抓你的站。
-
-确认没问题，推送上线：
-
-```
-git add .
-git commit -m "添加 robots.txt 配置"
-git push
-```
-
-部署完成后访问 `https://smallstep.one/robots.txt`（换成你自己的域名），能看到刚才写的内容就算成功。
-
-> **另外提一句：** Hugo 会给每个标签、分类自动生成一个列表页，如果某个标签下只有一两篇文章，这种页面内容很薄，Google 可能会判定为低质量页面。现在文章数量还少，不用特别处理；等内容多起来、个别标签页常年只有一篇文章时，可以考虑把 `/tags/` 这类路径也加进上面的 `Disallow` 规则里，不让爬虫抓取这些空壳页面。
 
 ------
 
@@ -91,7 +97,7 @@ git push
 
 到这一步，Google 已经知道你的网站在哪儿、能正常抓取了。但 Google 怎么知道这篇文章是谁写的、什么时候发的？这些信息光靠人眼看页面是看不出来的，得靠"结构化数据"明确告诉它。
 
-加了结构化数据之后，文章有机会在 Google 搜索结果里多显示一行发布日期之类的信息，点击率通常会比纯标题链接高一些。这一步偏进阶，不加也完全不影响网站正常运行，有空再做也行。
+Google 搜索结果里，部分文章会在标题下多显示一行绿色发布日期，或者作者名。这叫"富媒体摘要"（Rich Results），结构化数据是触发它的条件之一。有了这行日期，点击率通常会比纯标题链接高一些——用户能判断内容是否够新，时效性强的内容尤其明显。（注意：这一步偏进阶，不加也完全不影响正常使用"的基础上，再补一句"新站点短期内不一定能看到效果）
 
 打开 `myblog/layouts/partials/head/custom.html`（如果这个文件不存在，先在 `layouts/partials/` 下新建 `head` 文件夹，再建这个文件），在已有内容下面加一段：
 
@@ -237,5 +243,5 @@ Stack 主题自带一份默认的404页面，效果基本够用，不是必须�
 **系列导航**
 
 - 上一篇：[中级04——流量与变现基础](/hugo-analytics-adsense-basics/)
-- 下一篇：中级06——功能扩展（即将发布）
+- 下一篇：[中级06-接入评论系统](/hugo-stack-giscus-comments/)
 - 返回系列目录：[Hugo 建站指南](/hugo-guide/)
