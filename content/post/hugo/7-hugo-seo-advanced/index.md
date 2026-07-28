@@ -1,10 +1,11 @@
 ---
 title: "Hugo 博客 SEO 进阶——一行配置屏蔽 AI 爬虫，顺手让 Google 读懂你的文章"
-date: 2026-06-23
-lastmod: 2026-06-23
+date: 2026-07-10
+lastmod: 2026-07-10
 draft: false
 description: "一行配置屏蔽 GPTBot、ClaudeBot 等 AI 训练爬虫，再加上结构化数据和图片 alt、标题层级、内链这些写作细节，让搜索引擎真正读懂你的 Hugo 博客。"
 keywords: ["Hugo博客SEO", "robots.txt", "AI爬虫屏蔽", "Hugo结构化数据", "图片alt", "301重定向", "GPTBot屏蔽"]
+image: images/hugo-seo-advanced-thumbnail.webp
 categories:
   - Hugo建站
 tags:
@@ -106,7 +107,7 @@ Stack 主题默认会把发布日期渲染在文章页面上，Google 抓取后�
 
 这一步偏进阶，不加也完全不影响正常运行，有空再做也行。
 
-打开 `myblog/layouts/partials/head/custom.html`（如果这个文件不存在，先在 `layouts/partials/` 下新建 `head` 文件夹，再建这个文件；如果在[中级04](https://smallstep.one/hugo-analytics-adsense-basics/)里做过 GA4 接入，这个文件已经存在了，直接在已有内容下面加就行），在已有内容下面加一段：
+打开 `myblog/layouts/partials/head/custom.html`（如果这个文件不存在，先在 `layouts/partials/` 下新建 `head` 文件夹，再建这个文件；如果在 **[中级04](/hugo-analytics-adsense-basics/)** 里做过 GA4 接入，这个文件已经存在了，直接在已有内容下面加就行），在已有内容下面加一段：
 
 ```html
 {{ if .IsPage }}
