@@ -29,6 +29,12 @@ AI 公司的训练爬虫默认就会抓取你的内容——这篇教你用一�
 
 中级04让 Google 知道了"该去哪儿抓"，这一步反过来——告诉所有爬虫"哪些地方不该抓"。
 
+**如果你用的是 Cloudflare Pages 部署（按这个系列教程做下来都是这种情况），这一步什么都不需要做。** Cloudflare 会在 CDN 层自动注入一份完整的 robots.txt，包含 GPTBot、ClaudeBot、Google-Extended、Bytespider、CCBot、Applebot-Extended、Amazonbot、meta-externalagent 等 AI 训练爬虫的屏蔽规则，不需要任何配置就已经生效了。
+
+直接打开浏览器，访问你的域名 + `/robots.txt` 验证一下：
+
+**如果不是从中级04跟下来，未使用 Cloudflare Pages 部署，按照下面步骤操作。** 
+
 Hugo 默认是**不**生成 robots.txt 文件的，需要手动开启。打开 `config/_default/hugo.toml`，在文件顶层（不是在 `[params]` 之类的区块里面）加一行：
 
 ```toml
@@ -49,15 +55,13 @@ git push
 https://smallstep.one/robots.txt
 ```
 
-**如果你用的是 Cloudflare Pages 部署（按这个系列教程做下来都是这种情况），到这里就完成了。** Cloudflare 会在这个基础上自动叠加一套完整的 AI 训练爬虫屏蔽规则，包括 GPTBot、ClaudeBot、Google-Extended、Bytespider、CCBot、Applebot-Extended、Amazonbot、meta-externalagent 等，覆盖范围比手动维护还要全面，不需要再创建 `layouts/robots.txt` 文件——创建了反而会把 Cloudflare 这份更完整的规则覆盖掉。
-
 > **注意区分清楚：** `Google-Extended` 只控制 Google 是否拿你的内容去训练 Gemini 之类的 AI 模型，跟负责把你的网站收进搜索结果的 `Googlebot` 是两个完全不同的爬虫，屏蔽前者**不会**影响你网站在 Google 搜索里的正常收录。这两个名字长得太像，很容易搞混。
 
 > **另外提一句：** Hugo 会给每个标签、分类自动生成一个列表页，如果某个标签下只有一两篇文章，这种页面内容很薄，Google 可能会判定为低质量页面。现在文章数量还少，不用特别处理；等内容多起来、个别标签页常年只有一篇文章时，可以在 Cloudflare Pages 后台的 robots.txt 管理界面里补充规则，把 `/tags/` 这类路径排除掉。
 
 ------
 
-如果想屏蔽更多的爬虫，可以在站点根目录创建自己的robots.txt 文件（ `layouts/robots.txt`），然后把规则添加进去。
+如果想屏蔽更多的爬虫，可以在站点根目录创建自己的robots.txt 文件（ `layouts/robots.txt`），然后把规则添加进去。如果是使用Cloudflare Pages 部署的，在Cloudflare的Ai Crawl Control区域管理Robots.txt。
 
 ```
 User-agent: *
