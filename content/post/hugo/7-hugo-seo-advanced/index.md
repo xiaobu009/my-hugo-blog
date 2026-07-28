@@ -1,5 +1,5 @@
 ---
-title: "中级05-Hugo 博客 SEO 进阶——一行配置屏蔽 AI 爬虫，顺手让 Google 读懂你的文章"
+title: "中级05-Hugo 博客 SEO 进阶，一行配置屏蔽 AI 爬虫，顺手让 Google 读懂你的文章"
 date: 2026-07-10
 lastmod: 2026-07-10
 draft: false
