@@ -61,9 +61,9 @@ git push
 https://smallstep.one/robots.txt
 ```
 
-![](images\z5-002.webp)
+![](images/z5-002.webp)
 
-![](images\z5-003.webp)
+![](images/z5-003.webp)
 
 > **为什么本地访问 `http://localhost:1313/robots.txt` 看不到？** `hugo server` 开发模式下不会生成 robots.txt，这是 Hugo 的设计行为，避免开发时误配置影响线上。如果想在本地查看生成结果，运行 `hugo` 先构建静态文件，再用 `type public\robots.txt`（Windows）或 `cat public/robots.txt`（Mac/Git Bash）查看 `public/` 目录下的文件。
 
