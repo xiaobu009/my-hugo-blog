@@ -19,7 +19,7 @@ series_order: 7
 
 ## 做完这篇你能得到什么
 
-AI 公司的训练爬虫默认就会抓取你的内容——这篇教你用一行配置挡住它，Cloudflare 自动接管剩余的工作；同时给文章加上结构化数据，让 Google 更精准地识别文章的发布时间、作者等元数据，有助于在搜索结果里显示日期信息，也有利于被 AI 概述正确引用；另外把图片 alt、标题结构、内链这些容易被忽略的写作细节一次性捋一遍。
+AI 公司的训练爬虫默认就会抓取你的内容——如果你用的是 Cloudflare Pages 部署，这件事 Cloudflare 已经自动帮你处理好了，访问你的域名 + `/robots.txt` 就能验证；同时给文章加上结构化数据，让 Google 更精准地识别文章的发布时间、作者等元数据，有助于在搜索结果里显示日期信息，也有利于被 AI 概述正确引用；另外把图片 alt、标题结构、内链这些容易被忽略的写作细节一次性捋一遍。
 
 **前提：已经完成 [中级04](/hugo-analytics-adsense-basics/) 里 Search Console 的验证和 sitemap 提交——这篇不会重复这两步，直接往后接。如果还没做，先回那篇走一遍。延续中级04的方向，这篇涉及的所有设置同样是针对 Google 搜索引擎做的，不涉及百度等其他搜索引擎。**
 
@@ -33,9 +33,15 @@ AI 公司的训练爬虫默认就会抓取你的内容——这篇教你用一�
 
 直接打开浏览器，访问你的域名 + `/robots.txt` 验证一下：
 
+```
+https://smallstep.one/robots.txt
+```
+
+能看到一份带有爬虫屏蔽规则的文件，说明 Cloudflare 已经在帮你处理了。
+
 **如果不是从中级04跟下来，未使用 Cloudflare Pages 部署，按照下面步骤操作。** 
 
-Hugo 默认是**不**生成 robots.txt 文件的，需要手动开启。打开 `config/_default/hugo.toml`，在文件顶层（不是在 `[params]` 之类的区块里面）加一行：
+首先Hugo 默认是**不**生成 robots.txt 文件的，需要手动开启。打开 `config/_default/hugo.toml`，在文件顶层（不是在 `[params]` 之类的区块里面）加一行：
 
 ```toml
 enableRobotsTXT = true
@@ -55,13 +61,19 @@ git push
 https://smallstep.one/robots.txt
 ```
 
-> **注意区分清楚：** `Google-Extended` 只控制 Google 是否拿你的内容去训练 Gemini 之类的 AI 模型，跟负责把你的网站收进搜索结果的 `Googlebot` 是两个完全不同的爬虫，屏蔽前者**不会**影响你网站在 Google 搜索里的正常收录。这两个名字长得太像，很容易搞混。
+![](images\z5-002.webp)
 
-> **另外提一句：** Hugo 会给每个标签、分类自动生成一个列表页，如果某个标签下只有一两篇文章，这种页面内容很薄，Google 可能会判定为低质量页面。现在文章数量还少，不用特别处理；等内容多起来、个别标签页常年只有一篇文章时，可以在 Cloudflare Pages 后台的 robots.txt 管理界面里补充规则，把 `/tags/` 这类路径排除掉。
+![](images\z5-003.webp)
+
+> **为什么本地访问 `http://localhost:1313/robots.txt` 看不到？** `hugo server` 开发模式下不会生成 robots.txt，这是 Hugo 的设计行为，避免开发时误配置影响线上。如果想在本地查看生成结果，运行 `hugo` 先构建静态文件，再用 `type public\robots.txt`（Windows）或 `cat public/robots.txt`（Mac/Git Bash）查看 `public/` 目录下的文件。
+
+> **关于 `enableRobotsTXT = true` 这个配置：** 对于 Cloudflare Pages 用户，这行不是必须的——不加也已经有完整的 robots.txt 了。如果你加了，必须放在 `hugo.toml` 文件的**最顶层**（不能放在任何 `[section]` 区块的后面），否则 Hugo 解析时会把它当成区块内的子配置，导致不生效。
+
+> **注意区分清楚：** `Google-Extended` 只控制 Google 是否拿你的内容去训练 Gemini 之类的 AI 模型，跟负责把你的网站收进搜索结果的 `Googlebot` 是两个完全不同的爬虫，屏蔽前者**不会**影响你网站在 Google 搜索里的正常收录。这两个名字长得太像，很容易搞混。
 
 ------
 
-如果想屏蔽更多的爬虫，可以在站点根目录创建自己的robots.txt 文件（ `layouts/robots.txt`），然后把规则添加进去。如果是使用Cloudflare Pages 部署的，在Cloudflare的Ai Crawl Control区域管理Robots.txt。
+如果想屏蔽更多的爬虫，可以在站点根目录创建自己的robots.txt 文件（ `layouts/robots.txt`），然后把规则添加进去。
 
 ```
 User-agent: *
@@ -91,9 +103,9 @@ User-agent: Applebot-Extended
 Disallow: /
 ```
 
-这份文件用到了 Hugo 的模板语法（`{{ .Site.BaseURL }}`），构建时会被替换成你真实的网址，所以文件名后缀还是 `.txt`，内容里可以放模板代码。
+如果是跟着教程走下来，使用Cloudflare Pages 部署的，可在Cloudflare的Ai Crawl Control区域，直接管理Robots.txt文件
 
-本地运行 `hugo server -D`，打开浏览器访问 `http://localhost:1313/robots.txt`，确认内容跟你写的一致——尤其检查最上面的 `User-agent: *` 下面是不是 `Allow: /` 而不是 `Disallow: /`，这个写反是最容易出的事故，一旦写反等于告诉全世界的搜索引擎别来抓你的站。
+![](images/z5-001.webp)
 
 ------
 
