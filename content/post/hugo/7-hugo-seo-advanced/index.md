@@ -127,7 +127,9 @@ Disallow: /
 
 想做的话，往下看；想先跳过也完全没问题。
 
-打开 `myblog/layouts/partials/head/custom.html`（如果这个文件不存在，先在 `layouts/partials/` 下新建 `head` 文件夹，再建这个文件；如果在[中级04](https://smallstep.one/hugo-analytics-adsense-basics/)里做过 GA4 接入，这个文件已经存在了，直接在已有内容下面加就行），在已有内容下面加一段：
+打开 `myblog/layouts/partials/head/custom.html`（如果这个文件不存在，先在 `layouts/partials/` 下新建 `head` 文件夹，再建这个文件；（如果你之前因为别的需求已经建过这个文件、里面有内容，那就在已有内容下面另起一行加，别覆盖。）
+
+文件建好后，把下面这段贴进去：
 
 ```html
 {{ if .IsPage }}
