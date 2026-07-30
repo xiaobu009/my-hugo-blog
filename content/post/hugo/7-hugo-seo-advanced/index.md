@@ -133,20 +133,18 @@ Disallow: /
 
 ```html
 {{ if .IsPage }}
+{{ $schema := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" .Description
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "url" .Permalink
+  "author" (dict "@type" "Person" "name" "小布")
+}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ .Description | jsonify }},
-  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-  "dateModified": {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "author": {
-    "@type": "Person",
-    "name": "小布"
-  }
-}
+{{ $schema | jsonify (dict "indent" "  ") | safeJS }}
 </script>
 {{ end }}
 ```
