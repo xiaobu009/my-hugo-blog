@@ -71,9 +71,13 @@ Waline、Twikoo 这些方案功能确实更全，匿名也能评论，但代价�
 
 打开 GitHub 上的 `myblog` 仓库页面，点击 **Settings**，往下滚找到 **Features** 区域，勾选 **Discussions**，然后点击出现的 **Set up discussions** 按钮完成初始化。
 
+![开启 Discussions 功能](images/z6-002-2.webp)
+
 > **注意：** "Set up discussions" 点进去会跳到一个"发第一条讨论"的引导页面，这是 GitHub 的新手欢迎流程，**不需要填任何内容**，直接关掉这个页面就行。它和下一步安装 giscus app 是两件完全独立的事。
 
 进入 Discussions 后，推荐使用默认的 **Announcements** 分类——这种类型普通访客无法自己发起新讨论，只有 giscus bot 自动创建的讨论才会出现在里面，评论区更干净。
+
+![使用默认的Announcements分类](images/z6-001.webp)
 
 ------
 
@@ -81,9 +85,14 @@ Waline、Twikoo 这些方案功能确实更全，匿名也能评论，但代价�
 
 打开 [github.com/apps/giscus](https://github.com/apps/giscus)，点击 **Install**。
 
+![安装 giscus app](images/z6-016.webp)
+
 在仓库授权页面，选 **Only select repositories**，从下拉里找到 `myblog`，点 **Install** 确认。
 
 > 不要用默认的 All repositories——没必要把所有仓库都授权给 giscus，只给博客那个仓库就够了。
+
+![选 Only select repositories](images/z6-017.webp)
+
 
 安装完成后页面顶部会提示 "giscus was installed on the @你的用户名 account"，说明装好了。
 
@@ -159,15 +168,11 @@ git push
 
 推送完等 Cloudflare 自动构建（1-3 分钟），打开任意一篇文章往下滚，看到 GitHub 风格的登录入口和评论框说明配置成功了。
 
-本地也可以预览：
+打开 `http://你的域名/` 里的任意文章，滚到底部确认评论区出现即可。
 
-```
-hugo server -D
-```
+注意：用户要想留言需点击【使用 Github 登录】按钮登录Github账户
 
-打开 `http://localhost:1313` 里的任意文章，滚到底部确认评论区出现即可。
-
-> **如果你在中级04开启过 Cookie 同意机制（`cookies.enabled = true`），** 评论区也会被 `cookies.categories.functional` 这个分类一起拦住，读者第一次访问会先看到"需要同意才能查看评论"的提示。这和门控 GA 统计是同一套开关，属于正常行为，不是配置出错了。
+![【使用 Github 登录】按钮登录Github账户](images/z6-015.webp)
 
 ------
 
