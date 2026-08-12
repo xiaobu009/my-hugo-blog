@@ -5,6 +5,7 @@ lastmod: 2026-08-04
 draft: false
 description: "手把手实测：通过 Google Workspace ，用不到11元人民币注册一个.com域名，并把它正确托管到 Cloudflare，含 Squarespace 后台操作和 DNSSEC 设置全流程。"
 keywords: ["Google Workspace", "土耳其区域名", "便宜域名", "薅羊毛", "Cloudflare", "Squarespace"]
+image: images/turkey-google-workspace-cheap-domain-thumbnail.webp
 categories:
   - Technology
 tags:
@@ -58,40 +59,40 @@ url: "turkey-google-workspace-cheap-domain"
 打开 [workspace.google.com](https://workspace.google.com/intl/zh-CN/)，点击「开始免费试用」。
 
 1. **创建新账号**——不需要提前有 Gmail，这里会引导你新建一个专门用来管理这个域名的 Google 账号
-![](/images/wp-009.webp)
+![创建Google Workspace 新账号](/images/wp-009.webp)
 2. **填写公司信息**：公司名称随便填，员工人数选"只有您一人"或类似选项，**区域一定要选土耳其**，这是价格便宜的关键
-![](/images/wp-010.webp)
+![填写公司信息](/images/wp-010.webp)
 3. **填写联系信息**：姓名随意，联系邮箱可以用非 Gmail 邮箱（Outlook、QQ邮箱等均可）
-![](/images/wp-011.webp)
+![]填写联系信息(/images/wp-011.webp)
 4. **选择设置账号的方式**：选「获取新的自定义域名」，点继续
-![](/images/wp-012.webp)
+![选择设置账号的方式](/images/wp-012.webp)
 5. **搜索域名**：输入你想要的域名，能看到 .com/.info 等后缀显示的是里拉计价，通常是**75里拉/年**（约合10-15元人民币），已被注册的会直接提示不可用，可用的话直接进入下一步
-![](/images/wp-013.webp)
+![搜索域名](/images/wp-013.webp)
 6. **填写企业信息**：这里"将我的联系信息设为不公开"默认是开启的，也就是免费送 WHOIS 隐私保护。因为选的是土耳其地区，这里要填前面准备好的土耳其地址
-![](/images/wp-014.webp)
+![填写企业信息](/images/wp-014.webp)
 7. **创建用户**：这个用户名就是`用户名@你的新域名`，比如 `admin@yourname.com`，用户名随意取，**这个账号密码要记好**，后面登录 Workspace 后台和 Squarespace 都要用它
-![](/images/wp-015.webp)
+![创建用户](/images/wp-015.webp)
 8. **选择服务套餐**：会看到 Workspace 商务标准版的介绍，14天免费试用，试用期结束才开始扣费，试用期内可随时取消。**这里要注意：域名费用和 Workspace 订阅费用是分开计费的两笔钱**，点击「开始试用」
-![](/images/wp-016.webp)
+![选择服务套餐](/images/wp-016.webp)
 9. **确认订单信息**：会看到 Workspace 应用当前费用为0，域名费用是75里拉，页面会自动跳转到支付页
-![](/images/wp-017.webp)
+![确认订单信息](/images/wp-017.webp)
 10. **绑定付款方式**：填入信用卡信息，确认结账
-![](/images/wp-018.webp)
+![绑定付款方式]绑定付款方式(/images/wp-018.webp)
 11. **是否添加新用户**：点「暂时跳过」即可
-![](/images/wp-019.webp)
+![是否添加新用户](/images/wp-019.webp)
 12. **个性化设置**：三项选项都可以选"我还不确定"，不影响后续使用
-![](/images/wp-020.webp)
+![个性化设置](/images/wp-020.webp)
 
 ------
 
 ## 第二步：完成 Squarespace 邮箱验证（容易被漏掉的一步）
 
 个性化设置走完之后，**[Squarespace](https://www.squarespace.com/)**（不是 Workspace）会发一封激活邮件到你留的联系邮箱——这是因为域名业务已经转给 Squarespace 管理了。  
-![](/images/wp-021.webp)
+![Squarespace 邮箱验证](/images/wp-021.webp)
 
 1. 打开这封邮件，点击 **verify now** 按钮
 2. 会提示用 **Continue with Google** 登录，这里登录的账号就是刚才新建的那个（`用户名@你的域名`）
-![](/images/wp-022.webp)
+![Continue with Google](/images/wp-022.webp)
 ![](/images/wp-023.webp)
 3. 登录成功后会跳转到 Squarespace 后台的 Domains 页面，能看到刚买的域名。Squarespace 要求**15天内完成邮箱验证**，逾期可能影响域名状态
 4. 回到验证邮件点击验证，看到 **Email Successfully Verified** 就说明验证成功，域名在 Squarespace 那边会显示为激活状态
