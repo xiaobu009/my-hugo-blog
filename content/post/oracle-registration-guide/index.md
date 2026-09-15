@@ -75,11 +75,11 @@ Oracle 的风控逻辑简单说就是：**你提供的身份信息（邮箱、�
 
 
 >**注意不同区域申请链接不同：**<br>
-大陆：https://www.oracle.com/cn/cloud/free/ <br>
-美国：https://www.oracle.com/cloud/free/<br>
-日本：https://www.oracle.com/jp/cloud/free/<br>
-韩国：https://www.oracle.com/kr/cloud/free/<br>
-新加坡：https://www.oracle.com/asean/cloud/free/<br>
+大陆：[https://www.oracle.com/cn/cloud/free/ ](https://www.oracle.com/cn/cloud/free/ )<br>
+美国：[https://www.oracle.com/cloud/free/](ttps://www.oracle.com/cloud/free/)<br>
+日本：[https://www.oracle.com/jp/cloud/free/](https://www.oracle.com/jp/cloud/free/)<br>
+韩国：[https://www.oracle.com/kr/cloud/free/](https://www.oracle.com/kr/cloud/free/)<br>
+新加坡：[https://www.oracle.com/asean/cloud/free/](https://www.oracle.com/asean/cloud/free/)<br>
 
 打开 [甲骨文云中国区注册链接](https://www.oracle.com/cn/cloud/free)，按以下顺序填写：
 
