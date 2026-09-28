@@ -8,7 +8,7 @@ keywords: ["Oracle Cloud注册", "甲骨文云注册", "永久免费VPS", "Error
 url: "oracle-registration-guide"
 image: images/oracle-registration-guide-thumbnail.webp
 categories:
-  - VPS白嫖实战
+  - VPS
 tags:
   - Oracle
   - VPS
